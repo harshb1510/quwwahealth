@@ -1,10 +1,84 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, Link } from 'react-router-dom';
+import { GoogleLogin } from '@react-oauth/google';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { FcGoogle } from 'react-icons/fc';
+import { FaEnvelope, FaExclamationTriangle } from 'react-icons/fa';
+import { login, googleLogin, clearError, resendVerificationEmail } from '../store/slices/authSlice';
 import quwwaLogo from '../assets/images/header.png';
 
 const LoginForm = ({ onSwitchMode }) => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [showResendVerification, setShowResendVerification] = useState(false);
+  const [resendLoading, setResendLoading] = useState(false);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { loading, error, isAuthenticated } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/');
+    }
+  }, [isAuthenticated, navigate]);
+
+  useEffect(() => {
+    // Clear error when component mounts
+    dispatch(clearError());
+  }, [dispatch]);
+
+  // Check if error is related to email verification
+  const isEmailVerificationError = error && (
+    error.includes('verify your email') || 
+    error.includes('email not verified') ||
+    error.includes('Please verify your email')
+  );
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!formData.email || !formData.password) {
+      return;
+    }
+
+    await dispatch(login(formData));
+  };
+
+  const handleGoogleSuccess = async (credentialResponse) => {
+    await dispatch(googleLogin(credentialResponse.credential));
+  };
+
+  const handleGoogleError = () => {
+    console.error('Google login failed');
+  };
+
+  const handleResendVerification = async () => {
+    if (!formData.email) {
+      return;
+    }
+    setResendLoading(true);
+    try {
+      await dispatch(resendVerificationEmail(formData.email));
+      setShowResendVerification(false);
+    } catch (error) {
+      console.error('Failed to resend verification email:', error);
+    } finally {
+      setResendLoading(false);
+    }
+  };
 
   return (
     <div className="w-full max-w-sm mx-auto">
@@ -14,16 +88,68 @@ const LoginForm = ({ onSwitchMode }) => {
 
       <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Nice to see you again</h2>
 
-      <form>
+      {error && (
+        <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+          <div className="flex items-start">
+            <FaExclamationTriangle className="h-5 w-5 text-red-500 mt-0.5 mr-3" />
+            <div>
+              <p className="text-sm">{error}</p>
+              {isEmailVerificationError && (
+                <div className="mt-2">
+                  <button
+                    onClick={() => setShowResendVerification(!showResendVerification)}
+                    className="text-sm text-red-600 hover:text-red-800 underline"
+                  >
+                    Resend verification email
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showResendVerification && (
+        <div className="mb-4 p-3 bg-blue-100 border border-blue-400 text-blue-700 rounded-lg">
+          <div className="flex items-start">
+            <FaEnvelope className="h-5 w-5 text-blue-500 mt-0.5 mr-3" />
+            <div>
+              <p className="text-sm mb-2">
+                Send verification email to <strong>{formData.email}</strong>?
+              </p>
+              <div className="flex space-x-2">
+                <button
+                  onClick={handleResendVerification}
+                  disabled={resendLoading}
+                  className="text-sm bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 disabled:opacity-50"
+                >
+                  {resendLoading ? 'Sending...' : 'Send Email'}
+                </button>
+                <button
+                  onClick={() => setShowResendVerification(false)}
+                  className="text-sm bg-gray-600 text-white px-3 py-1 rounded hover:bg-gray-700"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit}>
         <div className="mb-5">
-          <label className="block text-gray-600 text-sm font-medium mb-1" htmlFor="login">
-            Login
+          <label className="block text-gray-600 text-sm font-medium mb-1" htmlFor="email">
+            Email
           </label>
           <input
-            id="login"
-            type="text"
-            placeholder="Email or phone number"
+            id="email"
+            type="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            placeholder="Enter your email"
             className="w-full px-4 py-3 bg-gray-100 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-[#54BD95]"
+            required
           />
         </div>
 
@@ -35,8 +161,11 @@ const LoginForm = ({ onSwitchMode }) => {
             <input
               id="password"
               type={passwordVisible ? 'text' : 'password'}
+              value={formData.password}
+              onChange={handleInputChange}
               placeholder="Enter password"
               className="w-full px-4 py-3 bg-gray-100 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-[#54BD95]"
+              required
             />
             <button
               type="button"
@@ -51,22 +180,29 @@ const LoginForm = ({ onSwitchMode }) => {
         <div className="flex items-center justify-between mb-6 text-sm">
           <label htmlFor="remember-me" className="flex items-center gap-2 cursor-pointer text-gray-600">
              <div className="relative">
-                <input type="checkbox" id="remember-me" className="sr-only"/>
-                <div className="block bg-gray-200 w-10 h-6 rounded-full"></div>
-                <div className="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"></div>
+                <input 
+                  type="checkbox" 
+                  id="remember-me" 
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
+                  className="sr-only"
+                />
+                <div className={`block w-10 h-6 rounded-full transition-colors ${rememberMe ? 'bg-[#54BD95]' : 'bg-gray-200'}`}></div>
+                <div className={`dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform ${rememberMe ? 'transform translate-x-4' : ''}`}></div>
             </div>
             Remember me
           </label>
-          <a href="#" className="font-medium text-[#54BD95] hover:text-green-700">
+          <Link to="/forgot-password" className="font-medium text-[#54BD95] hover:text-green-700">
             Forgot password?
-          </a>
+          </Link>
         </div>
 
         <button
           type="submit"
-          className="w-full bg-[#54BD95] text-white font-bold py-3 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300"
+          disabled={loading}
+          className="w-full bg-[#54BD95] text-white font-bold py-3 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Sign In
+          {loading ? 'Signing In...' : 'Sign In'}
         </button>
 
         <div className="my-6 flex items-center">
@@ -75,13 +211,18 @@ const LoginForm = ({ onSwitchMode }) => {
           <div className="flex-grow border-t border-gray-300"></div>
         </div>
         
-        <button
-          type="button"
-          className="w-full bg-gray-800 text-white font-bold py-3 px-4 rounded-lg hover:bg-gray-900 transition-colors duration-300 flex items-center justify-center gap-2"
-        >
-          <FcGoogle size={22}/>
-          Sign in with Google
-        </button>
+        <div className="w-full">
+          <GoogleLogin
+            onSuccess={handleGoogleSuccess}
+            onError={handleGoogleError}
+            useOneTap
+            theme="filled_black"
+            size="large"
+            text="signin_with"
+            shape="rectangular"
+            width="100%"
+          />
+        </div>
 
         <p className="text-center text-sm text-gray-600 mt-8">
           Don't have an account?{' '}
