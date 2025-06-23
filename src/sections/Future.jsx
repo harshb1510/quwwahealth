@@ -1,17 +1,19 @@
 import React from 'react';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import { useNavigate } from 'react-router-dom';
 import futureImage1 from '../assets/images/OurProgrammes/program.png';
 import futureImage2 from '../assets/images/OurProgrammes/program1.png';
 import futureImage3 from '../assets/images/OurProgrammes/program2.png';
 
 const Future = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-12 bg-yellow-50">
       <div className="mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
+          <p className="text-4xl md:text-5xl font-bold text-gray-800">
             Why Quwwa Health for Schools?
-          </h2>
+          </p>
           <div className="flex justify-center mt-2">
             <svg width="284" height="40" viewBox="0 0 284 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_1_13202)">
@@ -30,10 +32,10 @@ const Future = () => {
           {/* Block 1 */}
           <div className="flex flex-col md:flex-row ">
             <div className="md:w-1/2 bg-[#54BD95] text-white p-6 md:p-10 flex flex-col justify-center">
-              <h3 className="text-3xl font-bold mb-4">Comprehensive health monitoring</h3>
-              <p className="mb-6">Tailor educational strategies with data driven insights to enhance student health now into the future</p>
+              <p className="text-3xl font-[800] mb-4">Comprehensive health monitoring</p>
+              <p className="mb-6 font-[400]">Tailor educational strategies with data driven insights to enhance student health now into the future</p>
               <div className="flex space-x-4">
-                <button className="bg-white text-green-600 font-semibold py-2 px-4 rounded-md flex items-center">
+                <button className="bg-white text-green-600 font-semibold py-2 px-4 rounded-md flex items-center cursor-pointer" onClick={() => navigate('/contact')}>
                   Get in touch <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </button>
                 <button className="border border-white text-white font-semibold py-2 px-4 rounded-md">Learn more</button>
@@ -47,10 +49,10 @@ const Future = () => {
           {/* Block 2 */}
           <div className="flex flex-col md:flex-row-reverse rounded-2xl overflow-hidden ">
             <div className="md:w-1/2 bg-[#54BD95] text-white p-6 md:p-10 flex flex-col justify-center">
-              <h3 className="text-3xl font-bold mb-4">Curriculum development</h3>
-              <p className="mb-6">Quwwa Health helps develop targeted programs ensuring every student reaches their fitness potential.</p>
+              <p className="text-3xl font-[800] mb-4">Curriculum development</p>
+              <p className="mb-6 font-[400]">Quwwa Health helps develop targeted programs ensuring every student reaches their fitness potential.</p>
               <div className="flex space-x-4">
-                <button className="bg-white text-green-600 font-semibold py-2 px-4 rounded-md flex items-center">
+                <button className="bg-white text-green-600 font-semibold py-2 px-4 rounded-md flex items-center cursor-pointer" onClick={() => navigate('/contact')}>
                   Get in touch <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </button>
                 <button className="border border-white text-white font-semibold py-2 px-4 rounded-md">Learn more</button>
@@ -64,10 +66,10 @@ const Future = () => {
           {/* Block 3 */}
           <div className="flex flex-col md:flex-row  ">
             <div className="md:w-1/2 bg-[#54BD95] text-white p-6 md:p-10 flex flex-col justify-center">
-              <h3 className="text-3xl font-bold mb-4">Comprehensive health monitoring</h3>
-              <p className="mb-6">Tailor educational strategies with data driven insights to enhance student health now into the future</p>
+              <p className="text-3xl font-[800] mb-4 ">Comprehensive health monitoring</p>
+              <p className="mb-6 font-[400]">Tailor educational strategies with data driven insights to enhance student health now into the future</p>
               <div className="flex space-x-4">
-                <button className="bg-white text-green-600 font-semibold py-2 px-4 rounded-md flex items-center">
+                <button className="bg-white text-green-600 font-semibold py-2 px-4 rounded-md flex items-center cursor-pointer" onClick={() => navigate('/contact')}>
                   Get in touch <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </button>
                 <button className="border border-white text-white font-semibold py-2 px-4 rounded-md">Learn more</button>

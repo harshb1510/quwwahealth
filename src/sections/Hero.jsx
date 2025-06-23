@@ -15,13 +15,13 @@ const images = [image1, image2, image3, image4, image5];
 
 const DecorativeIcons = () => (
   <>
-    <div className="absolute top-0 right-0 -mt-5 -mr-5 z-20">
-      <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center shadow-lg">
+    <div className="absolute top-6 right-0  -mr-5 z-20">
+      <div className="w-12 h-12 bg-[#FBC75E] rounded-lg flex items-center justify-center shadow-lg transform rotate-20">
         <FiDatabase className="text-white text-2xl" />
       </div>
     </div>
-    <div className="absolute bottom-0 right-0 -mb-5 mr-10 z-20">
-      <div className="w-12 h-12 bg-pink-400 rounded-lg flex items-center justify-center shadow-lg">
+    <div className="absolute bottom-0 right-0 -mb-5 mr-10 z-20 transform rotate-20">
+      <div className="w-12 h-12 bg-[#FFAA94] rounded-lg flex items-center justify-center shadow-lg">
         <FiMessageSquare className="text-white text-2xl" />
       </div>
     </div>
@@ -49,18 +49,18 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left Column: Text Content */}
-          <div className="text-center md:text-left">
-            <h1 className=" font-bold text-4xl md:text-[75px] leading-tight md:leading-[76px] tracking-[0%] text-gray-800 mb-4">
-              Building Healthier
+          <div className="text-center md:text-left p-10">
+            <p className=" font-bold text-[75px] md:text-[75px] leading-tight md:leading-[76px] tracking-[0%] text-gray-800 mb-4">
+              Building <br /> Healthier
               <br />
-              Futures Together!
-            </h1>
+              Futures <br /> Together!
+            </p>
             <div className="flex justify-center md:justify-start my-6">
               <svg width="487" height="34" viewBox="0 0 487 34" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-sm h-auto">
                 <path d="M4 30C73.6307 10.3798 266.914 -17.0885 483 30" stroke="#54BD95" strokeWidth="8" strokeLinecap="round"/>
               </svg>
             </div>
-            <p className="text-lg text-gray-500">
+            <p className="text-lg text-[#A6A6A6] font-medium">
               Empowering kids to succeed with <br /> Healthy Body & Sharp Minds!
             </p>
           </div>
@@ -70,7 +70,7 @@ const Hero = () => {
             <div className="relative aspect-[636/526]">
               <SvgBackground />
               <DecorativeIcons />
-              <div className="absolute inset-0 p-6 z-10">
+              <div className="absolute inset-0 pt-[110px] pr-[10px] z-10">
                  <Swiper
                     modules={[Navigation, Autoplay]}
                     navigation={{
@@ -82,22 +82,22 @@ const Hero = () => {
                       delay: 2500,
                       disableOnInteraction: false,
                     }}
-                    className="w-full h-full rounded-lg"
+                    className="w-full h-full"
                     >
                     {images.map((image, index) => (
                       <SwiperSlide key={index}>
-                        <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover rounded-lg" />
+                        <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover rounded-b-2xl" />
                       </SwiperSlide>
                     ))}
                 </Swiper>
               </div>
 
                 {/* Navigation Arrows */}
-                <div className="swiper-button-prev-hero absolute top-1/2 left-0 -translate-x-1/2 z-20 cursor-pointer">
-                    <FiChevronLeft className="text-black text-4xl" />
+                <div className="swiper-button-prev-hero absolute top-1/2 left-4 -translate-x-1/2 z-20 cursor-pointer">
+                    <FiChevronLeft className="text-black text-6xl" />
                 </div>
-                <div className="swiper-button-next-hero absolute top-1/2 right-0 translate-x-1/2 z-20 cursor-pointer">
-                    <FiChevronRight className="text-black text-4xl" />
+                <div className="swiper-button-next-hero absolute top-1/2 right-6 translate-x-1/2 z-20 cursor-pointer">
+                    <FiChevronRight className="text-black text-6xl" />
                 </div>
             </div>
           </div>

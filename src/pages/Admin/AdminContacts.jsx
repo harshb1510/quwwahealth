@@ -82,7 +82,7 @@ const AdminContacts = () => {
       <div className="flex justify-between items-center mb-6">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Contact Submissions</h1>
-          <p className="text-gray-600 mt-1">Manage and respond to contact form submissions</p>
+          <p className="text-[#848383] mt-1">Manage and respond to contact form submissions</p>
         </div>
         <div className="flex items-center space-x-4">
           <select
@@ -125,7 +125,7 @@ const AdminContacts = () => {
               <h3 className="text-xl font-bold text-gray-900">{selectedSubmission.subject}</h3>
               <button
                 onClick={() => setSelectedSubmission(null)}
-                className="text-gray-400 hover:text-gray-600 text-2xl"
+                className="text-gray-400 hover:text-[#848383] text-2xl"
               >
                 ×
               </button>
@@ -194,7 +194,7 @@ const AdminContacts = () => {
           <div className="p-8 text-center">
             <div className="text-6xl mb-4">📧</div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">No submissions found</h3>
-            <p className="text-gray-600">
+            <p className="text-[#848383]">
               {filterStatus === 'all' 
                 ? 'No contact form submissions yet' 
                 : `No ${filterStatus} submissions found`
@@ -206,19 +206,19 @@ const AdminContacts = () => {
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-[#A6A6A6] uppercase tracking-wider">
                     Contact Info
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-[#A6A6A6] uppercase tracking-wider">
                     Subject
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-[#A6A6A6] uppercase tracking-wider">
                     Status
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-[#A6A6A6] uppercase tracking-wider">
                     Date
                   </th>
-                  <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-right text-xs font-medium text-[#A6A6A6] uppercase tracking-wider">
                     Actions
                   </th>
                 </tr>
@@ -229,7 +229,7 @@ const AdminContacts = () => {
                     <td className="px-6 py-4">
                       <div>
                         <div className="text-sm font-medium text-gray-900">{submission.name}</div>
-                        <div className="text-sm text-gray-500">{submission.email}</div>
+                        <div className="text-sm text-[#A6A6A6]">{submission.email}</div>
                       </div>
                     </td>
                     <td className="px-6 py-4">
@@ -248,7 +248,7 @@ const AdminContacts = () => {
                         <option value="archived">Archived</option>
                       </select>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-[#A6A6A6]">
                       {new Date(submission.createdAt).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
@@ -272,7 +272,7 @@ const AdminContacts = () => {
                         {submission.status !== 'archived' && (
                           <button
                             onClick={() => handleArchive(submission._id)}
-                            className="text-gray-600 hover:text-gray-900"
+                            className="text-[#848383] hover:text-gray-900"
                             title="Archive"
                           >
                             📁

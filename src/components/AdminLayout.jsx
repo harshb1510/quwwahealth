@@ -16,7 +16,7 @@ const AdminLayout = () => {
                     `flex items-center px-4 py-3 rounded-lg transition-colors ${
                       isActive 
                         ? 'bg-[#54BD95] text-white' 
-                        : 'text-gray-600 hover:bg-gray-100'
+                        : 'text-[#848383] hover:bg-gray-100'
                     }`
                   }
                 >
@@ -31,7 +31,7 @@ const AdminLayout = () => {
                     `flex items-center px-4 py-3 rounded-lg transition-colors ${
                       isActive 
                         ? 'bg-[#54BD95] text-white' 
-                        : 'text-gray-600 hover:bg-gray-100'
+                        : 'text-[#848383] hover:bg-gray-100'
                     }`
                   }
                 >
@@ -46,7 +46,7 @@ const AdminLayout = () => {
                     `flex items-center px-4 py-3 rounded-lg transition-colors ${
                       isActive 
                         ? 'bg-[#54BD95] text-white' 
-                        : 'text-gray-600 hover:bg-gray-100'
+                        : 'text-[#848383] hover:bg-gray-100'
                     }`
                   }
                 >

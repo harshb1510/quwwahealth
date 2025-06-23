@@ -8,9 +8,9 @@ const CanteenMenu = () => {
     <section className="pt-20 bg-gradient-to-b from-yellow-50 via-yellow-50 to-white">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
+          <p className="text-4xl md:text-5xl font-bold text-gray-800">
           Canteen Menus That Promote Healthy Choices 
-          </h2>
+          </p>
           <div className="flex justify-center mt-2">
             <svg width="284" height="40" viewBox="0 0 284 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_1_13202)">
@@ -29,13 +29,13 @@ const CanteenMenu = () => {
           {/* Left Column */}
           <div className="md:w-1/2 text-left">
             <div className="border-t-4 border-[#F3F25B] mb-8">
-                <p className="text-gray-600">
+                <p className="text-[#848383]">
                 Quwwa Healthy Canteens create canteen menus that offer a huge variety of fresh healthy foods. 
 
 We understand that it is both ours and the schools responsibility to help students gain an understanding of how what they choose to eat each day impacts their mental and physical well being. 
                 </p>
             </div>
-            <button className="bg-[#F3F25B] text-gray-900 font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors">
+            <button className="bg-[#F3F25B] text-gray-900 font-[600] py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors">
               View More
             </button>
           </div>

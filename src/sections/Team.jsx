@@ -6,10 +6,11 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import team1 from '../assets/images/AboutUs/team1.png';
-import team2 from '../assets/images/AboutUs/team2.png';
-import team3 from '../assets/images/AboutUs/team3.png';
-import team4 from '../assets/images/AboutUs/team4.png';
+import team1 from '../assets/images/AboutUs/team1.jpeg';
+import team2 from '../assets/images/AboutUs/team2.jpeg';
+import team3 from '../assets/images/AboutUs/team3.jpeg';
+import team4 from '../assets/images/AboutUs/team4.jpeg';
+import team5 from '../assets/images/AboutUs/team5.jpeg';
 
 const teamMembers = [
   {
@@ -19,20 +20,26 @@ const teamMembers = [
 
   },
   {
-    name: 'Dr. Prashant',
-    roles: ['Senior Physiotherapist', 'Advisory board member'],
-    image: team2,
-  },
-  {
-    name: 'Dr. Zeeshan Ahmad',
-    roles: ['Senior Sports Physiotherapist', 'S&C coach Australia', 'Advisory Board member'],
-    image: team3,
+    name: 'Zeeshan Khan',
+    roles: ['Environmentalist & Sustainability Strategist- Dubai','Advisory Board member'],
+    image: team5,
 
   },
   {
-    name: 'Dr. Shahana Pathan',
-    roles: ['Counseling Psychologist, Life', 'Skill Trainer and Certified', 'Special Educator', 'Advisory Board member'],
+    name: 'Dr. Zeeshan Ahmad',
+    roles: ['Advisor – Sports Injury Prevention','& Physical Performance','MPT (Sports), Certified Strength & Conditioning Coach (Australia)','Advisory Board Member – Quwwa Health'],
     image: team4,
+
+  },
+  {
+    name: 'Dr. Prashant',
+    roles: ['Advisor – Pediatric Sports Rehabilitation ','& Functional Health','MPT (Sports Physiotherapy), India','Advisory Board Member – Quwwa Health'],
+    image: team2,
+  },
+  {
+    name: 'Dr. Shahana Pathan',
+    roles: ['Advisor – Mental Wellness, Life Skills','& Inclusive Education','Ph.D. in Counseling Psychology | Certified Special Educator | Life Skill Trainer – Riyadh','Advisory Board Member – Quwwa Health'],
+    image: team3,
 
   },
 ];
@@ -41,7 +48,7 @@ const Team = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Meet the Team</h2>
+        <p className="text-4xl md:text-5xl font-bold mb-4">Meet the Team</p>
         <div className="flex justify-center mb-20">
           <svg width="284" height="40" viewBox="0 0 284 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_1_13202)">
@@ -55,7 +62,7 @@ const Team = () => {
           </svg>
         </div>
 
-        <div className="relative px-10">
+        <div className="relative px-4">
           <Swiper
             modules={[Navigation, A11y, Autoplay]}
             spaceBetween={30}
@@ -79,11 +86,11 @@ const Team = () => {
             {teamMembers.map((member, index) => (
               <SwiperSlide key={index}>
                 <div className="flex flex-col items-center">
-                  <div className={`relative p-1 rounded-full  `}>
+                  <div className={`relative p-1 rounded-full border-2 border-[#F3F25B]  `}>
                     <img src={member.image} alt={member.name} className="w-40 h-40 rounded-full object-cover" />
                   </div>
                   <h3 className="text-xl font-bold mt-4 mb-1">{member.name}</h3>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-[#848383]">
                     {member.roles.map((role, i) => (
                       <p key={i}>{role}</p>
                     ))}
@@ -94,10 +101,10 @@ const Team = () => {
           </Swiper>
           
           <button className="swiper-button-prev-team absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors">
-            <ChevronLeftIcon className="w-6 h-6 text-gray-600" />
+            <ChevronLeftIcon className="w-6 h-6 text-[#848383]" />
           </button>
           <button className="swiper-button-next-team absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors">
-            <ChevronRightIcon className="w-6 h-6 text-gray-600" />
+            <ChevronRightIcon className="w-6 h-6 text-[#848383]" />
           </button>
         </div>
       </div>

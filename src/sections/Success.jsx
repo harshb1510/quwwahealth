@@ -26,15 +26,15 @@ const Success = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left Column */}
           <div className="md:w-1/2 text-left">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 leading-snug mb-4">
+            <p className="text-2xl md:text-3xl font-bold text-gray-800 leading-snug mb-4">
               Addressing public health concerns: What data can Quwwa Health show?
-            </h3>
-            <div className="border-l-4 border-[#F3F25B] pl-6 mb-8">
-                <p className="text-gray-600">
+            </p>
+            <div className="border-t-4 border-[#F3F25B] w-1/2 mb-2">
+            </div>
+                <p className="text-[#848383] font-medium mb-8">
                 Quwwa Health plays a vital role in addressing childhood obesity, promoting mental health and preventing negative health outcomes in adulthood through early detection and intervention. It allows schools to view data, compare and compile reports from which policies can be created.
                 </p>
-            </div>
-            <button className="bg-[#F3F25B] text-gray-900 font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors">
+            <button className="bg-[#F3F25B] text-gray-900 font-[600] py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors">
               View More
             </button>
           </div>

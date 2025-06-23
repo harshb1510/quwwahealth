@@ -6,10 +6,10 @@ const EmpoweringFuture = () => {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 via-yellow-50 to-white">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
+          <p className="text-4xl md:text-5xl font-bold text-gray-800">
           Empowering School's future:<br />
           the Quwwa Health advantage
-          </h2>
+          </p>
           <div className="flex justify-center mt-2">
             <svg width="284" height="40" viewBox="0 0 284 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_1_13202)">
@@ -27,15 +27,16 @@ const EmpoweringFuture = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left Column */}
           <div className="md:w-1/2 text-left">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 leading-snug mb-4">
-              Addressing public health concerns: What data can Quwwa Health show?
-            </h3>
-            <div className="border-l-4 border-[#F3F25B] pl-6 mb-8">
-                <p className="text-gray-600">
-                Quwwa Health plays a vital role in addressing childhood obesity, promoting mental health and preventing negative health outcomes in adulthood through early detection and intervention. It allows schools to view data, compare and compile reports from which policies can be created.
+            <div className="border-t-4 border-[#F3F25B] w-1/2  mb-2"/>
+                <p className="text-[#848383] font-medium mb-4">
+                Discover how integrating the Quwwa Health program into your curriculum can transform student wellness and academic achievement.
                 </p>
-            </div>
-            <button className="bg-[#F3F25B] text-gray-900 font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors">
+                <p className="text-[#848383] font-medium mb-4">
+                Quwwa Health Card Reporting System
+designed to ensure that children receive proper health tracking, leading to a healthier and more active lifestyle. Transform student health and academic achievement.
+                </p>
+           
+            <button className="bg-[#F3F25B] text-gray-900 font-[600] py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors">
               View More
             </button>
           </div>

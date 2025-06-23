@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { allBlogPosts } from './Blogs'; // Assuming you export this from Blogs.jsx
 import { FaLinkedinIn, FaFacebookF, FaTwitter } from 'react-icons/fa';
 
-import authorImage from '../assets/images/AboutUs/team1.png'; // Placeholder author image
+import authorImage from '../assets/images/AboutUs/team1.jpeg'; // Placeholder author image
 
 // You'll need to export allBlogPosts from Blogs.jsx
 // export const allBlogPosts = [ ... ];
@@ -113,7 +113,7 @@ const BlogPost = () => {
                             <a 
                                 href={`#${heading.id}`}
                                 onClick={(e) => handleLinkClick(e, heading.id)}
-                                className="text-gray-600 hover:text-blue-600 transition-colors font-medium border-l-2 border-transparent hover:border-blue-600 pl-3 block"
+                                className="text-[#848383] hover:text-blue-600 transition-colors font-medium border-l-2 border-transparent hover:border-blue-600 pl-3 block"
                             >
                                 {heading.title}
                             </a>

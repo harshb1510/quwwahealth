@@ -52,11 +52,11 @@ const Highlights = () => {
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left Column */}
           <div>
-            <h2 className="text-4xl md:text-[50px] font-semibold leading-tight md:leading-[100%] tracking-[0%] text-gray-800 mb-12 md:mb-24">
+            <p className="text-4xl md:text-[50px] font-semibold leading-tight md:leading-[100%] tracking-[0%] text-gray-800 mb-12 md:mb-24">
               Program
               <br />
               Highlights
-            </h2>
+            </p>
             <div className="flex flex-col md:flex-row gap-8 md:gap-12">
               <Rating rating={4.9} source="google.com" />
               <Rating rating={4.8} source="healthplatform" />

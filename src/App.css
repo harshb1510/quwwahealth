@@ -1,0 +1,23 @@
+body {
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 12px;
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: #52BD94;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* For Firefox */
+html {
+  scrollbar-color: #52BD94 #fff;
+  scrollbar-width: thin;
+}

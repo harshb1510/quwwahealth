@@ -48,7 +48,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo */}
         <div className="flex items-center">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center cursor-pointer">
             <img src={Logo} alt="QuwwaHealth Logo" className="h-14 mr-3" />
           </Link>
         </div>
@@ -58,15 +58,14 @@ const Header = () => {
           <NavLink to="/" className={navLinkClasses}>Home</NavLink>
           <NavLink to="/about" className={navLinkClasses}>About Us</NavLink>
           <NavLink to="/programs" className={navLinkClasses}>Our Programs</NavLink>
-          <NavLink to="/contact" className={navLinkClasses}>Contact Us</NavLink>
+          <NavLink to="/holiday-camp" className={navLinkClasses}>Holiday Camp</NavLink>
+          <NavLink to="/branding" onClick={toggleMenu} className={navLinkClasses}>Branding Sponsorship</NavLink>
           <NavLink to="/blogs" className={navLinkClasses}>Blogs</NavLink>
         </nav>
 
         {/* Desktop Action Buttons */}
         <div className="hidden md:flex items-center space-x-4">
-          <button className="p-3 rounded-md bg-[#54BD95] hover:opacity-90 transition-opacity duration-300">
-            <FaSearch size={18} className="text-white" />
-          </button>
+
           
           {isAuthenticated && user ? (
             <div className="relative">
@@ -82,7 +81,7 @@ const Header = () => {
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
                   <div className="px-4 py-2 text-sm text-gray-700 border-b">
                     <div className="font-medium">{user?.name}</div>
-                    <div className="text-xs text-gray-500">{user?.email}</div>
+                    <div className="text-xs text-[#A6A6A6]">{user?.email}</div>
                   </div>
                   {user.role === 'admin' && (
                     <Link
@@ -113,7 +112,7 @@ const Header = () => {
           ) : (
             <>
               <Link to="/auth" className="text-base font-medium text-[#A6A6A6] hover:text-black transition-colors duration-300 px-4 py-2">Login</Link>
-              <Link to="/auth" className="text-base font-medium bg-[#54BD95] text-white px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity duration-300">
+              <Link to="/auth?mode=signup" className="text-base font-medium bg-[#54BD95] text-white px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity duration-300">
                 Sign Up
               </Link>
             </>
@@ -135,7 +134,9 @@ const Header = () => {
             <NavLink to="/" onClick={toggleMenu} className={navLinkClasses}>Home</NavLink>
             <NavLink to="/about" onClick={toggleMenu} className={navLinkClasses}>About Us</NavLink>
             <NavLink to="/programs" onClick={toggleMenu} className={navLinkClasses}>Our Programs</NavLink>
-            <NavLink to="/contact" onClick={toggleMenu} className={navLinkClasses}>Contact Us</NavLink>
+            <NavLink to="/holiday-camp" onClick={toggleMenu} className={navLinkClasses}>Holiday Camp</NavLink>
+            <NavLink to="/branding" onClick={toggleMenu} className={navLinkClasses}>Branding Sponsorship</NavLink>
+            
             <NavLink to="/blogs" onClick={toggleMenu} className={navLinkClasses}>Blogs</NavLink>
             <hr className="w-full border-gray-200" />
             <div className="flex flex-col items-center space-y-4 w-full">
@@ -149,7 +150,7 @@ const Header = () => {
                     {renderUserAvatar()}
                     <div>
                       <div className="font-medium text-gray-800">{user?.name}</div>
-                      <div className="text-xs text-gray-500">{user?.email}</div>
+                      <div className="text-xs text-[#A6A6A6]">{user?.email}</div>
                     </div>
                   </div>
                   {user.role === 'admin' && (
@@ -183,7 +184,7 @@ const Header = () => {
               ) : (
                 <>
                   <Link to="/auth" onClick={toggleMenu} className="text-base font-medium text-[#A6A6A6] hover:text-black transition-colors duration-300 border border-gray-300 px-6 py-2 rounded-lg w-full text-center max-w-xs">Login</Link>
-                  <Link to="/auth" onClick={toggleMenu} className="text-base font-medium bg-[#54BD95] text-white px-6 py-2 rounded-lg hover:opacity-90 transition-opacity duration-300 w-full text-center max-w-xs">
+                  <Link to="/auth?mode=signup" onClick={toggleMenu} className="text-base font-medium bg-[#54BD95] text-white px-6 py-2 rounded-lg hover:opacity-90 transition-opacity duration-300 w-full text-center max-w-xs">
                     Sign Up
                   </Link>
                 </>

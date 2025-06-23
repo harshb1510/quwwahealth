@@ -34,7 +34,7 @@ const ForgotPassword = () => {
           <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
             Reset Email Sent
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-[#848383]">
             If an account with that email exists, a password reset link has been sent. Please check your inbox.
           </p>
           <div className="mt-8">
@@ -59,7 +59,7 @@ const ForgotPassword = () => {
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Forgot Your Password?
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
+          <p className="mt-2 text-center text-sm text-[#848383]">
             No worries! Enter your email below and we'll send you a reset link.
           </p>
         </div>

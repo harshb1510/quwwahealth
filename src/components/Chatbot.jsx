@@ -102,7 +102,7 @@ const Chatbot = () => {
           ))}
           {isLoading && (
             <div className="flex justify-start">
-                 <div className="bg-gray-100 text-gray-500 px-4 py-2 rounded-2xl rounded-bl-none">
+                 <div className="bg-gray-100 text-[#A6A6A6] px-4 py-2 rounded-2xl rounded-bl-none">
                     Typing...
                  </div>
             </div>

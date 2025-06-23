@@ -85,10 +85,10 @@ const Testimonials = () => {
           </Swiper>
           
           <button className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors">
-            <ChevronLeftIcon className="w-6 h-6 text-gray-600" />
+            <ChevronLeftIcon className="w-6 h-6 text-[#848383]" />
           </button>
           <button className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors">
-            <ChevronRightIcon className="w-6 h-6 text-gray-600" />
+            <ChevronRightIcon className="w-6 h-6 text-[#848383]" />
           </button>
         </div>
       </div>

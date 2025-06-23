@@ -104,7 +104,7 @@ const AdminBlogs = () => {
       <div className="flex justify-between items-center mb-6">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Blog Management</h1>
-          <p className="text-gray-600 mt-1">Create, edit, and manage your blog posts</p>
+          <p className="text-[#848383] mt-1">Create, edit, and manage your blog posts</p>
         </div>
         <button
           onClick={handleCreate}
@@ -154,7 +154,7 @@ const AdminBlogs = () => {
           <div className="p-8 text-center">
             <div className="text-6xl mb-4">📝</div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">No blog posts yet</h3>
-            <p className="text-gray-600 mb-4">Get started by creating your first blog post</p>
+            <p className="text-[#848383] mb-4">Get started by creating your first blog post</p>
             <button
               onClick={handleCreate}
               className="px-4 py-2 bg-[#54BD95] text-white rounded-md hover:bg-[#4a9f7f] transition-colors"
@@ -167,19 +167,19 @@ const AdminBlogs = () => {
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-[#A6A6A6] uppercase tracking-wider">
                     Title
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-[#A6A6A6] uppercase tracking-wider">
                     Category
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-[#A6A6A6] uppercase tracking-wider">
                     Status
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-[#A6A6A6] uppercase tracking-wider">
                     Created
                   </th>
-                  <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-right text-xs font-medium text-[#A6A6A6] uppercase tracking-wider">
                     Actions
                   </th>
                 </tr>
@@ -191,7 +191,7 @@ const AdminBlogs = () => {
                       <div>
                         <div className="text-sm font-medium text-gray-900">{blog.title}</div>
                         {blog.excerpt && (
-                          <div className="text-sm text-gray-500 truncate max-w-xs">
+                          <div className="text-sm text-[#A6A6A6] truncate max-w-xs">
                             {blog.excerpt}
                           </div>
                         )}
@@ -205,7 +205,7 @@ const AdminBlogs = () => {
                     <td className="px-6 py-4 whitespace-nowrap">
                       {getStatusBadge(blog.status)}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-[#A6A6A6]">
                       {new Date(blog.createdAt).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

@@ -63,7 +63,7 @@ const Blogs = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-6xl md:text-7xl font-bold">Blog</h1>
-          <p className="text-lg text-gray-600 mt-4">Get the latest insights about Health & Fitness</p>
+          <p className="text-lg text-[#848383] mt-4">Get the latest insights about Health & Fitness</p>
         </div>
 
         {/* Featured Blog Post */}
@@ -72,8 +72,8 @@ const Blogs = () => {
             <div className="overflow-hidden rounded-lg">
               <img src={featuredPost.image} alt={featuredPost.title} className="w-full h-96 object-contain group-hover:scale-105 transition-transform duration-300" />
             </div>
-            <h2 className="text-3xl font-semibold mt-6 group-hover:text-gray-700">{featuredPost.title}</h2>
-            <p className="text-gray-500 mt-2 text-sm">{featuredPost.readTime} • {featuredPost.date}</p>
+            <p className="text-3xl font-bold mt-6 group-hover:text-gray-700">{featuredPost.title}</p>
+            <p className="text-[#A6A6A6] mt-2 text-sm">{featuredPost.readTime} • {featuredPost.date}</p>
           </Link>
         </div>
 
@@ -89,8 +89,8 @@ const Blogs = () => {
                     </div>
                   </div>
                   <div className="flex-grow">
-                    <h3 className="text-2xl font-semibold group-hover:text-gray-700">{post.title}</h3>
-                    <p className="text-gray-500 mt-2 text-sm">{post.readTime} • {post.date}</p>
+                    <p className="text-2xl font-bold group-hover:text-gray-700">{post.title}</p>
+                    <p className="text-[#A6A6A6] mt-2 text-sm">{post.readTime} • {post.date}</p>
                   </div>
                 </div>
               </Link>

@@ -55,7 +55,7 @@ const ContactUs = () => {
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto mb-16">
         <h1 className="text-5xl md:text-6xl font-bold text-gray-900">Contact Us</h1>
-        <p className="mt-4 text-lg text-gray-600">
+        <p className="mt-4 text-lg text-[#848383]">
           Any question or remarks? Just write us a message!
         </p>
       </div>
@@ -100,7 +100,7 @@ const ContactUs = () => {
             <div className="flex flex-col items-center justify-center h-full text-center">
               <FiCheckCircle className="h-16 w-16 text-green-500 mb-4" />
               <h3 className="text-2xl font-bold text-gray-800">Message Sent!</h3>
-              <p className="mt-2 text-gray-600">Thank you for contacting us. We will get back to you shortly.</p>
+              <p className="mt-2 text-[#848383]">Thank you for contacting us. We will get back to you shortly.</p>
               <button 
                 onClick={handleResetForm}
                 className="mt-6 bg-[#54BD95] text-white font-bold py-3 px-8 rounded-lg hover:bg-green-600 transition-colors"
@@ -151,12 +151,12 @@ const ContactUs = () => {
               <div className="mb-6">
                 <label className="text-sm font-medium text-gray-700">Select Subject?</label>
                 <div className="mt-2 flex flex-wrap gap-x-6 gap-y-2">
-                  <div className="flex items-center"><input type="radio" name="subject" value="General Inquiry" checked={formData.subject === 'General Inquiry'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="general" className="ml-2 text-sm text-gray-600">General Inquiry</label></div>
-                  <div className="flex items-center"><input type="radio" name="subject" value="Sports Day" checked={formData.subject === 'Sports Day'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="sports-day" className="ml-2 text-sm text-gray-600">Sports Day</label></div>
-                  <div className="flex items-center"><input type="radio" name="subject" value="Health Report" checked={formData.subject === 'Health Report'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="health-report" className="ml-2 text-sm text-gray-600">Health Report</label></div>
-                  <div className="flex items-center"><input type="radio" name="subject" value="Healthy Canteen" checked={formData.subject === 'Healthy Canteen'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="healthy-canteen" className="ml-2 text-sm text-gray-600">Healthy Canteen</label></div>
-                  <div className="flex items-center"><input type="radio" name="subject" value="School PE" checked={formData.subject === 'School PE'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="school-pe" className="ml-2 text-sm text-gray-600">School PE</label></div>
-                  <div className="flex items-center"><input type="radio" name="subject" value="Sports Program" checked={formData.subject === 'Sports Program'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="sports-program" className="ml-2 text-sm text-gray-600">Sports Program</label></div>
+                  <div className="flex items-center"><input type="radio" name="subject" value="General Inquiry" checked={formData.subject === 'General Inquiry'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="general" className="ml-2 text-sm text-[#848383]">General Inquiry</label></div>
+                  <div className="flex items-center"><input type="radio" name="subject" value="Sports Day" checked={formData.subject === 'Sports Day'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="sports-day" className="ml-2 text-sm text-[#848383]">Sports Day</label></div>
+                  <div className="flex items-center"><input type="radio" name="subject" value="Health Report" checked={formData.subject === 'Health Report'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="health-report" className="ml-2 text-sm text-[#848383]">Health Report</label></div>
+                  <div className="flex items-center"><input type="radio" name="subject" value="Healthy Canteen" checked={formData.subject === 'Healthy Canteen'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="healthy-canteen" className="ml-2 text-sm text-[#848383]">Healthy Canteen</label></div>
+                  <div className="flex items-center"><input type="radio" name="subject" value="School PE" checked={formData.subject === 'School PE'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="school-pe" className="ml-2 text-sm text-[#848383]">School PE</label></div>
+                  <div className="flex items-center"><input type="radio" name="subject" value="Sports Program" checked={formData.subject === 'Sports Program'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="sports-program" className="ml-2 text-sm text-[#848383]">Sports Program</label></div>
                 </div>
               </div>
 
@@ -182,7 +182,7 @@ const ContactUs = () => {
       {/* CTA Section */}
       <div className="text-center max-w-2xl mx-auto mt-24">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Join the Movement Towards Healthier Schools!</h2>
-        <p className="mt-4 text-lg text-gray-600">
+        <p className="mt-4 text-lg text-[#848383]">
           Be a part of this transformative initiative aimed at fostering healthy, active students.
         </p>
         <div className="mt-2 flex justify-center">

@@ -56,7 +56,7 @@ const InvestmentReturn = () => {
                 <div key={index} className="flex flex-col items-center">
                     <img src={feature.icon} alt="" className="h-24 mb-6"/>
                     <h3 className="text-xl font-bold text-gray-800 mb-3">{feature.title}</h3>
-                    <p className="text-gray-600 max-w-sm">{feature.description}</p>
+                    <p className="text-[#848383] max-w-sm">{feature.description}</p>
                 </div>
             ))}
         </div>

@@ -79,7 +79,7 @@ const SignupForm = ({ onSwitchMode }) => {
             <FaEnvelope className="h-8 w-8 text-green-600" />
           </div>
           <h1 className="text-3xl font-bold mb-4 text-gray-900">Check Your Email</h1>
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-[#848383] mb-6">
             We've sent a verification email to <strong>{formData.email}</strong>
           </p>
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
@@ -122,7 +122,7 @@ const SignupForm = ({ onSwitchMode }) => {
               Back to Login
             </button>
           </div>
-          <p className="text-xs text-gray-500 mt-6">
+          <p className="text-xs text-[#A6A6A6] mt-6">
             Didn't receive the email? Check your spam folder or contact support.
           </p>
         </div>
@@ -161,9 +161,7 @@ const SignupForm = ({ onSwitchMode }) => {
               width="100%"
             />
           </div>
-          <button className="flex items-center justify-center w-12 h-10 bg-gray-100 text-blue-400 rounded-md hover:bg-gray-200 transition-colors">
-            <FaTwitter />
-          </button>
+    
         </div>
 
         <div className="flex items-center my-8">
@@ -284,7 +282,7 @@ const SignupForm = ({ onSwitchMode }) => {
           />
         </div>
 
-        <div className="flex items-start gap-3 mb-6 text-left text-sm text-gray-500">
+        <div className="flex items-start gap-3 mb-6 text-left text-sm text-[#A6A6A6]">
           <input 
             type="checkbox" 
             id="terms" 
@@ -307,7 +305,7 @@ const SignupForm = ({ onSwitchMode }) => {
             </button>
         </div>
 
-        <p className="text-center text-sm text-gray-600 mt-8">
+        <p className="text-center text-sm text-[#848383] mt-8">
           Already a member?{' '}
           <button type="button" onClick={onSwitchMode} className="font-medium text-purple-600 hover:text-purple-800">
             Sign In

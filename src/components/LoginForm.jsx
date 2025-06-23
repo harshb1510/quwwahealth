@@ -139,7 +139,7 @@ const LoginForm = ({ onSwitchMode }) => {
 
       <form onSubmit={handleSubmit}>
         <div className="mb-5">
-          <label className="block text-gray-600 text-sm font-medium mb-1" htmlFor="email">
+          <label className="block text-[#848383] text-sm font-medium mb-1" htmlFor="email">
             Email
           </label>
           <input
@@ -154,7 +154,7 @@ const LoginForm = ({ onSwitchMode }) => {
         </div>
 
         <div className="mb-3">
-          <label className="block text-gray-600 text-sm font-medium mb-1" htmlFor="password">
+          <label className="block text-[#848383] text-sm font-medium mb-1" htmlFor="password">
             Password
           </label>
           <div className="relative">
@@ -170,7 +170,7 @@ const LoginForm = ({ onSwitchMode }) => {
             <button
               type="button"
               onClick={() => setPasswordVisible(!passwordVisible)}
-              className="absolute inset-y-0 right-0 px-4 flex items-center text-gray-500"
+              className="absolute inset-y-0 right-0 px-4 flex items-center text-[#A6A6A6]"
             >
               {passwordVisible ? <FiEyeOff /> : <FiEye />}
             </button>
@@ -178,7 +178,7 @@ const LoginForm = ({ onSwitchMode }) => {
         </div>
 
         <div className="flex items-center justify-between mb-6 text-sm">
-          <label htmlFor="remember-me" className="flex items-center gap-2 cursor-pointer text-gray-600">
+          <label htmlFor="remember-me" className="flex items-center gap-2 cursor-pointer text-[#848383]">
              <div className="relative">
                 <input 
                   type="checkbox" 
@@ -224,7 +224,7 @@ const LoginForm = ({ onSwitchMode }) => {
           />
         </div>
 
-        <p className="text-center text-sm text-gray-600 mt-8">
+        <p className="text-center text-sm text-[#848383] mt-8">
           Don't have an account?{' '}
           <button type="button" onClick={onSwitchMode} className="font-medium text-[#54BD95] hover:text-green-700">
             Sign up now
