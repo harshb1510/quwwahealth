@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { FaSearch, FaBars, FaTimes, FaUser, FaSignOutAlt, FaUserCircle } from 'react-icons/fa'
+import { googleLogout } from '@react-oauth/google';
 import { logout } from '../store/slices/authSlice'
 import Logo from '../assets/images/header.png'
 
@@ -83,6 +84,15 @@ const Header = () => {
                     <div className="font-medium">{user?.name}</div>
                     <div className="text-xs text-gray-500">{user?.email}</div>
                   </div>
+                  {user.role === 'admin' && (
+                    <Link
+                      to="/admin/blogs"
+                      onClick={() => setIsUserMenuOpen(false)}
+                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
+                    >
+                      <span>Admin</span>
+                    </Link>
+                  )}
                   <button
                     onClick={handleProfileClick}
                     className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
@@ -142,6 +152,15 @@ const Header = () => {
                       <div className="text-xs text-gray-500">{user?.email}</div>
                     </div>
                   </div>
+                  {user.role === 'admin' && (
+                    <Link
+                      to="/admin/dashboard"
+                      onClick={toggleMenu}
+                      className="text-base font-medium bg-gray-600 text-white px-6 py-2 rounded-lg hover:opacity-90 transition-opacity duration-300 w-full text-center max-w-xs flex items-center justify-center space-x-2"
+                    >
+                      <span>Admin</span>
+                    </Link>
+                  )}
                   <Link
                     to="/profile"
                     onClick={toggleMenu}

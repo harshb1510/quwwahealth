@@ -17,6 +17,11 @@ import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import { getProfile, finishInitialLoad } from './store/slices/authSlice'
 import './App.css'
+import AdminRoute from './components/AdminRoute'
+import AdminLayout from './components/AdminLayout'
+import AdminDashboard from './pages/Admin/AdminDashboard'
+import AdminBlogs from './pages/Admin/AdminBlogs'
+import AdminContacts from './pages/Admin/AdminContacts'
 
 function App() {
   const dispatch = useDispatch()
@@ -50,13 +55,31 @@ function App() {
           <Route path="blogs" element={<Blogs />} />
           <Route path="blog/:id" element={<BlogPost />} />
           <Route path="auth" element={<Auth />} />
-          <Route path="profile" element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          } />
+          <Route
+            path="profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
           <Route path="terms" element={<Terms />} />
         </Route>
+
+        <Route
+          path="/admin"
+          element={
+            <AdminRoute>
+              <AdminLayout />
+            </AdminRoute>
+          }
+        >
+          <Route index element={<AdminBlogs />} />
+          <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="blogs" element={<AdminBlogs />} />
+          <Route path="contacts" element={<AdminContacts />} />
+        </Route>
+
         <Route path="/verify-email" element={<EmailVerification />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />

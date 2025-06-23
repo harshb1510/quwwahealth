@@ -1,8 +1,55 @@
-import React from 'react';
-import { FiMail, FiMapPin, FiTwitter, FiInstagram } from 'react-icons/fi';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { FiMail, FiMapPin, FiTwitter, FiInstagram, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
 import { FaDiscord } from 'react-icons/fa';
+import { submitContactForm, clearContactState } from '../store/slices/contactSlice';
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    subject: 'General Inquiry',
+    message: '',
+  });
+
+  const dispatch = useDispatch();
+  const { loading, error, success } = useSelector((state) => state.contact);
+
+  useEffect(() => {
+    // Clear state when component unmounts
+    return () => {
+      dispatch(clearContactState());
+    };
+  }, [dispatch]);
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+  
+  const handleRadioChange = (e) => {
+    setFormData((prev) => ({...prev, subject: e.target.value}));
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(submitContactForm(formData));
+  };
+
+  const handleResetForm = () => {
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      subject: 'General Inquiry',
+      message: '',
+    });
+    dispatch(clearContactState());
+  }
+
   return (
     <div className="bg-[#F7FBEF] py-24 px-4 sm:px-6 lg:px-8">
       {/* Header */}
@@ -49,49 +96,75 @@ const ContactUs = () => {
 
         {/* Right Side: Form */}
         <div className="w-full md:w-2/3 p-8 sm:p-12">
-          <form>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <label htmlFor="first-name" className="text-sm font-medium text-gray-700">First Name</label>
-                <input type="text" id="first-name" placeholder='|' className="mt-1 block w-full border-b border-gray-300 focus:outline-none focus:border-[#54BD95] py-2"/>
-              </div>
-              <div>
-                <label htmlFor="last-name" className="text-sm font-medium text-gray-700">Last Name</label>
-                <input type="text" id="last-name" placeholder='Doe' className="mt-1 block w-full border-b border-gray-300 focus:outline-none focus:border-[#54BD95] py-2"/>
-              </div>
+          {success ? (
+            <div className="flex flex-col items-center justify-center h-full text-center">
+              <FiCheckCircle className="h-16 w-16 text-green-500 mb-4" />
+              <h3 className="text-2xl font-bold text-gray-800">Message Sent!</h3>
+              <p className="mt-2 text-gray-600">Thank you for contacting us. We will get back to you shortly.</p>
+              <button 
+                onClick={handleResetForm}
+                className="mt-6 bg-[#54BD95] text-white font-bold py-3 px-8 rounded-lg hover:bg-green-600 transition-colors"
+              >
+                Send Another Message
+              </button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <label htmlFor="email" className="text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="email" className="mt-1 block w-full border-b border-gray-300 focus:outline-none focus:border-[#54BD95] py-2"/>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              {error && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6" role="alert">
+                  <FiAlertCircle className="inline-block align-middle mr-2" />
+                  <span className="align-middle">{error}</span>
+                </div>
+              )}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label htmlFor="firstName" className="text-sm font-medium text-gray-700">First Name</label>
+                  <input type="text" id="firstName" value={formData.firstName} onChange={handleInputChange} required className="mt-1 block w-full border-b border-gray-300 focus:outline-none focus:border-[#54BD95] py-2"/>
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="text-sm font-medium text-gray-700">Last Name</label>
+                  <input type="text" id="lastName" value={formData.lastName} onChange={handleInputChange} className="mt-1 block w-full border-b border-gray-300 focus:outline-none focus:border-[#54BD95] py-2"/>
+                </div>
               </div>
-              <div>
-                <label htmlFor="phone" className="text-sm font-medium text-gray-700">Phone Number</label>
-                <input type="tel" id="phone" className="mt-1 block w-full border-b border-gray-300 focus:outline-none focus:border-[#54BD95] py-2"/>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label htmlFor="email" className="text-sm font-medium text-gray-700">Email</label>
+                  <input type="email" id="email" value={formData.email} onChange={handleInputChange} required className="mt-1 block w-full border-b border-gray-300 focus:outline-none focus:border-[#54BD95] py-2"/>
+                </div>
+                <div>
+                  <label htmlFor="phone" className="text-sm font-medium text-gray-700">Phone Number</label>
+                  <input type="tel" id="phone" value={formData.phone} onChange={handleInputChange} className="mt-1 block w-full border-b border-gray-300 focus:outline-none focus:border-[#54BD95] py-2"/>
+                </div>
               </div>
-            </div>
 
-            <div className="mb-6">
-              <label className="text-sm font-medium text-gray-700">Select Subject?</label>
-              <div className="mt-2 flex flex-wrap gap-x-6 gap-y-2">
-                <div className="flex items-center"><input type="radio" name="subject" id="general" className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300" defaultChecked/><label htmlFor="general" className="ml-2 text-sm text-gray-600">General Inquiry</label></div>
-                <div className="flex items-center"><input type="radio" name="subject" id="sports-day" className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="sports-day" className="ml-2 text-sm text-gray-600">Sports Day</label></div>
-                <div className="flex items-center"><input type="radio" name="subject" id="health-report" className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="health-report" className="ml-2 text-sm text-gray-600">Health Report</label></div>
-                <div className="flex items-center"><input type="radio" name="subject" id="healthy-canteen" className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="healthy-canteen" className="ml-2 text-sm text-gray-600">Healthy Canteen</label></div>
-                <div className="flex items-center"><input type="radio" name="subject" id="school-pe" className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="school-pe" className="ml-2 text-sm text-gray-600">School PE</label></div>
-                <div className="flex items-center"><input type="radio" name="subject" id="sports-program" className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="sports-program" className="ml-2 text-sm text-gray-600">Sports Program</label></div>
+              <div className="mb-6">
+                <label className="text-sm font-medium text-gray-700">Select Subject?</label>
+                <div className="mt-2 flex flex-wrap gap-x-6 gap-y-2">
+                  <div className="flex items-center"><input type="radio" name="subject" value="General Inquiry" checked={formData.subject === 'General Inquiry'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="general" className="ml-2 text-sm text-gray-600">General Inquiry</label></div>
+                  <div className="flex items-center"><input type="radio" name="subject" value="Sports Day" checked={formData.subject === 'Sports Day'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="sports-day" className="ml-2 text-sm text-gray-600">Sports Day</label></div>
+                  <div className="flex items-center"><input type="radio" name="subject" value="Health Report" checked={formData.subject === 'Health Report'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="health-report" className="ml-2 text-sm text-gray-600">Health Report</label></div>
+                  <div className="flex items-center"><input type="radio" name="subject" value="Healthy Canteen" checked={formData.subject === 'Healthy Canteen'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="healthy-canteen" className="ml-2 text-sm text-gray-600">Healthy Canteen</label></div>
+                  <div className="flex items-center"><input type="radio" name="subject" value="School PE" checked={formData.subject === 'School PE'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="school-pe" className="ml-2 text-sm text-gray-600">School PE</label></div>
+                  <div className="flex items-center"><input type="radio" name="subject" value="Sports Program" checked={formData.subject === 'Sports Program'} onChange={handleRadioChange} className="h-4 w-4 text-[#54BD95] focus:ring-[#54BD95] border-gray-300"/><label htmlFor="sports-program" className="ml-2 text-sm text-gray-600">Sports Program</label></div>
+                </div>
               </div>
-            </div>
 
-            <div className="mb-6">
-              <label htmlFor="message" className="text-sm font-medium text-gray-700">Message</label>
-              <input type="text" id="message" placeholder='Write your message..' className="mt-1 block w-full border-b border-gray-300 focus:outline-none focus:border-[#54BD95] py-2"/>
-            </div>
+              <div className="mb-6">
+                <label htmlFor="message" className="text-sm font-medium text-gray-700">Message</label>
+                <input type="text" id="message" value={formData.message} onChange={handleInputChange} placeholder='Write your message..' required className="mt-1 block w-full border-b border-gray-300 focus:outline-none focus:border-[#54BD95] py-2"/>
+              </div>
 
-            <div className="flex justify-end">
-              <button type="submit" className="bg-[#54BD95] text-white font-bold py-3 px-8 rounded-lg hover:bg-green-600 transition-colors">Send Message</button>
-            </div>
-          </form>
+              <div className="flex justify-end">
+                <button 
+                  type="submit" 
+                  disabled={loading}
+                  className="bg-[#54BD95] text-white font-bold py-3 px-8 rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50"
+                >
+                  {loading ? 'Sending...' : 'Send Message'}
+                </button>
+              </div>
+            </form>
+          )}
         </div>
       </div>
       
