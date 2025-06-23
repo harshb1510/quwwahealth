@@ -70,7 +70,7 @@ const Hero = () => {
             <div className="relative aspect-[636/526]">
               <SvgBackground />
               <DecorativeIcons />
-              <div className="absolute inset-0 pt-[150px] pr-[10px] z-10">
+              <div className="absolute inset-0 pt-[110px] pr-[10px] z-10">
                  <Swiper
                     modules={[Navigation, Autoplay]}
                     navigation={{
