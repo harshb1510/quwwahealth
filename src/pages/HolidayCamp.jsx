@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../sections/Hero'
+import HolidayCampHero from '../sections/HolidayCampHero'
 import About from '../sections/About'
 import Highlights from '../sections/Highlights'
 import CTA from '../sections/CTA'
@@ -11,12 +11,7 @@ import Contact from '../sections/Contact'
 const HolidayCamp = () => {
   return (
     <div className="holiday-camp">
-      <Hero />
-      <Highlights />
-      <CTA />
-      <Programs />
-      <About />
-      <Testimonials />
+      <HolidayCampHero />
     </div>
   )
 }

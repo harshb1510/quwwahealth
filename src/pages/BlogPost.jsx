@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { allBlogPosts } from './Blogs'; // Assuming you export this from Blogs.jsx
 import { FaLinkedinIn, FaFacebookF, FaTwitter } from 'react-icons/fa';
 
-import authorImage from '../assets/images/AboutUs/team1.png'; // Placeholder author image
+import authorImage from '../assets/images/AboutUs/team1.jpeg'; // Placeholder author image
 
 // You'll need to export allBlogPosts from Blogs.jsx
 // export const allBlogPosts = [ ... ];
