@@ -38,8 +38,8 @@ const AdminBlogs = () => {
       excerpt: '',
       tags: '',
       featuredImage: '',
-      metaTitle: '',
-      metaDescription: ''
+      meta_title: '',
+      meta_description: ''
     });
     setIsEditorOpen(true);
   };
@@ -48,10 +48,10 @@ const AdminBlogs = () => {
     setSelectedBlog(blog);
     setEditorData({
       ...blog,
-      featuredImage: blog.featuredImage || '',
+      featured_image: blog.featured_image || '',
       tags: blog.tags ? blog.tags.join(', ') : '',
-      metaTitle: blog.metaTitle || '',
-      metaDescription: blog.metaDescription || ''
+      meta_title: blog.meta_title || '',
+      meta_description: blog.meta_description || ''
     });
     setIsEditorOpen(true);
   };
@@ -206,7 +206,7 @@ const AdminBlogs = () => {
                       {getStatusBadge(blog.status)}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-[#A6A6A6]">
-                      {new Date(blog.createdAt).toLocaleDateString()}
+                      {new Date(blog.created_at).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <button

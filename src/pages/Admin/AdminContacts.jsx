@@ -165,7 +165,7 @@ const AdminContacts = () => {
                 <div>
                   <label className="block text-sm font-medium text-gray-700">Date</label>
                   <p className="text-gray-900">
-                    {new Date(selectedSubmission.createdAt).toLocaleString()}
+                    {new Date(selectedSubmission.created_at).toLocaleString()}
                   </p>
                 </div>
               </div>
@@ -249,7 +249,7 @@ const AdminContacts = () => {
                       </select>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-[#A6A6A6]">
-                      {new Date(submission.createdAt).toLocaleDateString()}
+                      {new Date(submission.created_at).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <div className="flex justify-end space-x-2">
