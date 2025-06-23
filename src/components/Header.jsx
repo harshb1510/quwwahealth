@@ -48,7 +48,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo */}
         <div className="flex items-center">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center cursor-pointer">
             <img src={Logo} alt="QuwwaHealth Logo" className="h-14 mr-3" />
           </Link>
         </div>
@@ -58,7 +58,7 @@ const Header = () => {
           <NavLink to="/" className={navLinkClasses}>Home</NavLink>
           <NavLink to="/about" className={navLinkClasses}>About Us</NavLink>
           <NavLink to="/programs" className={navLinkClasses}>Our Programs</NavLink>
-          <NavLink to="/holiday-camp" className={navLinkClasses}>Events</NavLink>
+          <NavLink to="/holiday-camp" className={navLinkClasses}>Holiday Camp</NavLink>
           <NavLink to="/contact" className={navLinkClasses}>Contact Us</NavLink>
           <NavLink to="/blogs" className={navLinkClasses}>Blogs</NavLink>
         </nav>
@@ -136,7 +136,8 @@ const Header = () => {
             <NavLink to="/" onClick={toggleMenu} className={navLinkClasses}>Home</NavLink>
             <NavLink to="/about" onClick={toggleMenu} className={navLinkClasses}>About Us</NavLink>
             <NavLink to="/programs" onClick={toggleMenu} className={navLinkClasses}>Our Programs</NavLink>
-            <NavLink to="/holiday-camp" onClick={toggleMenu} className={navLinkClasses}> Events</NavLink>
+            <NavLink to="/holiday-camp" onClick={toggleMenu} className={navLinkClasses}>Holiday Camp</NavLink>
+            
             <NavLink to="/contact" onClick={toggleMenu} className={navLinkClasses}>Contact Us</NavLink>
             <NavLink to="/blogs" onClick={toggleMenu} className={navLinkClasses}>Blogs</NavLink>
             <hr className="w-full border-gray-200" />
