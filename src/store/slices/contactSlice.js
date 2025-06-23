@@ -42,7 +42,7 @@ const contactSlice = createSlice({
       })
       .addCase(submitContactForm.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload.message;
+        state.error = action.payload;
       });
   },
 });

@@ -111,9 +111,20 @@ const ContactUs = () => {
           ) : (
             <form onSubmit={handleSubmit}>
               {error && (
-                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6" role="alert">
-                  <FiAlertCircle className="inline-block align-middle mr-2" />
-                  <span className="align-middle">{error}</span>
+                <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md mb-6" role="alert">
+                  <div className="flex">
+                    <div className="py-1"><FiAlertCircle className="h-6 w-6 text-red-500 mr-4" /></div>
+                    <div>
+                      <p className="font-bold">{typeof error === 'string' ? error : error.message || 'Validation Failed'}</p>
+                      {error.errors && Array.isArray(error.errors) && (
+                        <ul className="mt-2 list-disc list-inside text-sm">
+                          {error.errors.map((err, index) => (
+                            <li key={index}>{err.msg}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
                 </div>
               )}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">

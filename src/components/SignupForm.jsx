@@ -136,8 +136,15 @@ const SignupForm = ({ onSwitchMode }) => {
         <h1 className="text-4xl font-bold mb-6">Sign up</h1>
 
         {error && (
-          <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-            {error}
+          <div className="mb-4 p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded-lg text-left">
+            <p className="font-bold">{typeof error === 'string' ? error : error.message || 'An error occurred'}</p>
+            {error.errors && (
+              <ul className="list-disc list-inside mt-2">
+                {error.errors.map((err, index) => (
+                  <li key={index}>{err.msg}</li>
+                ))}
+              </ul>
+            )}
           </div>
         )}
 
