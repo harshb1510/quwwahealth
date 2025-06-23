@@ -8,10 +8,10 @@ const Terms = () => {
           <h1 className="text-6xl font-bold text-gray-800">
             Terms & Conditions
           </h1>
-          <p className="text-xl text-gray-600 mt-4">
+          <p className="text-xl text-[#848383] mt-4">
             ALPRO® Hosting Services Terms of Use
           </p>
-          <p className="text-md text-gray-500 mt-2">
+          <p className="text-md text-[#A6A6A6] mt-2">
             Effective Date: 15th March 2025
           </p>
         </div>

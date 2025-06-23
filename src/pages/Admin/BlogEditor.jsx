@@ -106,12 +106,12 @@ const BlogEditor = ({ formData, onFormChange, onSave, onCancel, categories = [] 
                   <div>
                     <label htmlFor="metaTitle" className="block text-sm font-medium text-gray-700 mb-1">Meta Title</label>
                     <input type="text" name="metaTitle" id="metaTitle" value={formData.metaTitle} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#54BD95]" placeholder="SEO title (max 60 chars)" maxLength="60" />
-                    <p className="text-xs text-right text-gray-500 mt-1">{formData.metaTitle?.length || 0}/60</p>
+                    <p className="text-xs text-right text-[#A6A6A6] mt-1">{formData.metaTitle?.length || 0}/60</p>
                   </div>
                   <div>
                     <label htmlFor="metaDescription" className="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>
                     <textarea name="metaDescription" id="metaDescription" rows="3" value={formData.metaDescription} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#54BD95]" placeholder="SEO description (max 160 chars)" maxLength="160"></textarea>
-                    <p className="text-xs text-right text-gray-500 mt-1">{formData.metaDescription?.length || 0}/160</p>
+                    <p className="text-xs text-right text-[#A6A6A6] mt-1">{formData.metaDescription?.length || 0}/160</p>
                   </div>
                 </div>
               </div>

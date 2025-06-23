@@ -10,19 +10,19 @@ const About = () => {
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           {/* Left Column */}
           <div className="md:w-1/2">
-            <h2 className="text-3xl sm:text-4xl md:text-[50px] font-semibold leading-tight md:leading-[100%] tracking-[0%] text-gray-800 mb-8 md:mb-12 w-full md:w-3/4">
+            <p className="text-3xl sm:text-4xl md:text-[50px] font-bold leading-tight md:leading-[100%] tracking-[0%] text-gray-800 mb-8 md:mb-12 w-full md:w-3/4">
               Health & Fitness Reporting System
-            </h2>
+            </p>
             <ul className="space-y-4">
-              <li className="flex items-center text-lg text-gray-600">
+              <li className="flex items-center text-lg text-[#848383]">
                 <CheckIcon className="mr-3 flex-shrink-0" />
                 <span className="text-base font-medium">Empowering decision making with data.</span>
               </li>
-              <li className="flex items-center text-lg text-gray-600">
+              <li className="flex items-center text-lg text-[#848383]">
                 <CheckIcon className="mr-3 flex-shrink-0" />
                 <span className="text-base font-medium">Annual & Biannual Health Check-Ups</span>
               </li>
-              <li className="flex items-center text-lg text-gray-600">
+              <li className="flex items-center text-lg text-[#848383]">
                 <CheckIcon className="mr-3 flex-shrink-0" />
                 <span className="text-base font-medium">Ensuring continuous monitoring and timely interventions</span>
               </li>
@@ -45,7 +45,7 @@ const About = () => {
               />
               <div className="flex-grow">
                 <p className="font-bold text-gray-800">Amanda Young</p>
-                <p className="text-sm text-gray-500">Expert</p>
+                <p className="text-sm text-[#A6A6A6]">Expert</p>
               </div>
               <div className="bg-[#54BD95] p-2 rounded-full text-white ml-3">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,7 +54,7 @@ const About = () => {
               </div>
             </div>
             {/* Image Icon Card */}
-            <div className="hidden md:block absolute bottom-16 -left-8 bg-[#54BD95] p-3 rounded-xl text-white shadow-lg z-10">
+            <div className="hidden md:block absolute bottom-18 -left-2 bg-[#54BD95] p-3 rounded-xl text-white shadow-lg z-10 transform -rotate-20">
               <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1_9845)">
                   <path d="M16.1876 3.74049L4.91847 6.76004C4.02936 6.99828 3.50172 7.91217 3.73996 8.80128L6.75951 20.0704C6.99775 20.9595 7.91165 21.4872 8.80076 21.2489L20.0699 18.2294C20.959 17.9911 21.4866 17.0772 21.2484 16.1881L18.2288 4.919C17.9906 4.02989 17.0767 3.50225 16.1876 3.74049Z" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />

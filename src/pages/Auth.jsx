@@ -1,10 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import LoginForm from '../components/LoginForm'
 import SignupForm from '../components/SignupForm'
 import loginBg from '../assets/images/login.png'
+import { useSearchParams } from 'react-router-dom'
 
 const Auth = () => {
-  const [isLogin, setIsLogin] = useState(true)
+  const [searchParams] = useSearchParams();
+  const initialMode = searchParams.get('mode') === 'signup' ? false : true;
+  const [isLogin, setIsLogin] = useState(initialMode)
+
+  useEffect(() => {
+    setIsLogin(searchParams.get('mode') === 'signup' ? false : true);
+  }, [searchParams]);
 
   const switchMode = () => {
     setIsLogin((prevIsLogin) => !prevIsLogin)

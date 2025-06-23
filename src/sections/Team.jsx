@@ -41,7 +41,7 @@ const Team = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Meet the Team</h2>
+        <p className="text-4xl md:text-5xl font-bold mb-4">Meet the Team</p>
         <div className="flex justify-center mb-20">
           <svg width="284" height="40" viewBox="0 0 284 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_1_13202)">
@@ -83,7 +83,7 @@ const Team = () => {
                     <img src={member.image} alt={member.name} className="w-40 h-40 rounded-full object-cover" />
                   </div>
                   <h3 className="text-xl font-bold mt-4 mb-1">{member.name}</h3>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-[#848383]">
                     {member.roles.map((role, i) => (
                       <p key={i}>{role}</p>
                     ))}
@@ -94,10 +94,10 @@ const Team = () => {
           </Swiper>
           
           <button className="swiper-button-prev-team absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors">
-            <ChevronLeftIcon className="w-6 h-6 text-gray-600" />
+            <ChevronLeftIcon className="w-6 h-6 text-[#848383]" />
           </button>
           <button className="swiper-button-next-team absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors">
-            <ChevronRightIcon className="w-6 h-6 text-gray-600" />
+            <ChevronRightIcon className="w-6 h-6 text-[#848383]" />
           </button>
         </div>
       </div>

@@ -24,7 +24,7 @@ const offerings = [
   'Ball-catching and throwing',
   'Balance and coordination development',
   'Strength, endurance, agility, and speed training',
-  'Aerobics',
+  'Aerobics', 
   'Team-building exercises',
 ];
 
@@ -33,7 +33,7 @@ const KeyBenefits = () => {
     <section className="py-20 bg-yellow-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800">Key Benefits</h2>
+          <p className="text-4xl md:text-5xl font-bold text-gray-800">Key Benefits</p>
           <div className="flex justify-center mt-2">
             <svg width="284" height="40" viewBox="0 0 284 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_1_13202)">
@@ -54,17 +54,17 @@ const KeyBenefits = () => {
               <div className="flex-shrink-0 bg-white p-4 rounded-lg shadow-md">
                 {feature.icon}
               </div>
-              <p className="text-gray-600 font-medium">{feature.text}</p>
+              <p className="text-[#848383] font-medium">{feature.text}</p>
             </div>
           ))}
         </div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-20 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12">
+        <p className="text-4xl md:text-5xl font-bold text-gray-800 mb-12">
           Our Program Offerings Include:
-        </h2>
-        <ul className="flex flex-wrap justify-center items-center gap-x-12 gap-y-4 text-gray-500 text-xl font-medium">
+        </p>
+        <ul className="flex flex-wrap justify-center items-center gap-x-12 gap-y-4 text-[#A6A6A6] text-xl font-medium">
           {offerings.map((offering) => (
             <li key={offering} className="flex items-center">
               <span className="h-2.5 w-2.5 bg-gray-400 rounded-full mr-3"></span>

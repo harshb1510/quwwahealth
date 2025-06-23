@@ -36,7 +36,7 @@ const ProgramCard = ({ image, title, description }) => (
       <img src={image} alt={title} className="w-full h-full object-contain" />
     </div>
     <h3 className="text-2xl font-bold text-gray-800 mb-2">{title}</h3>
-    <p className="text-gray-500 text-base font-medium">{description}</p>
+    <p className="text-[#A6A6A6] text-base font-medium">{description}</p>
   </div>
 );
 
@@ -44,9 +44,9 @@ const Programs = () => {
   return (
     <section className="py-12 md:py-24 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-[50px] font-semibold leading-tight md:leading-[100%] tracking-[0%] text-gray-800 text-center mb-12 md:mb-24">
+        <p className="text-4xl md:text-[50px] font-semibold leading-tight md:leading-[100%] tracking-[0%] text-gray-800 text-center mb-12 md:mb-24">
           Our Programs
-        </h2>
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
           {programData.map((program, index) => (
             <ProgramCard

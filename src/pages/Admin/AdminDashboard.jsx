@@ -29,7 +29,7 @@ const AdminDashboard = () => {
       <div className="flex items-center">
         <div className="text-3xl mr-4">{icon}</div>
         <div>
-          <p className="text-sm font-medium text-gray-600">{title}</p>
+          <p className="text-sm font-medium text-[#848383]">{title}</p>
           <p className="text-2xl font-bold text-gray-900">{value}</p>
         </div>
       </div>
@@ -40,7 +40,7 @@ const AdminDashboard = () => {
     <div>
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Dashboard</h1>
-        <p className="text-gray-600">Welcome to your admin dashboard. Here's an overview of your content.</p>
+        <p className="text-[#848383]">Welcome to your admin dashboard. Here's an overview of your content.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">

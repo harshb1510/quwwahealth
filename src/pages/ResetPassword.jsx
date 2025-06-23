@@ -41,7 +41,7 @@ const ResetPassword = () => {
             <FaExclamationTriangle className="h-6 w-6 text-red-600" />
           </div>
           <h2 className="text-3xl font-extrabold text-gray-900">Invalid Link</h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-[#848383]">
             No password reset token was found. This link is either invalid or has expired.
           </p>
           <div className="mt-8">
@@ -66,7 +66,7 @@ const ResetPassword = () => {
             <FaCheckCircle className="h-6 w-6 text-green-600" />
           </div>
           <h2 className="text-3xl font-extrabold text-gray-900">Password Reset!</h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-[#848383]">
             Your password has been successfully reset. You can now log in with your new password.
           </p>
           <div className="mt-8">
@@ -90,7 +90,7 @@ const ResetPassword = () => {
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Reset Your Password
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
+          <p className="mt-2 text-center text-sm text-[#848383]">
             Please enter your new password below.
           </p>
         </div>

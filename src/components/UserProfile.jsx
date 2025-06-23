@@ -90,7 +90,7 @@ const UserProfile = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-800">{user.name}</h3>
-                <p className="text-gray-600 flex items-center">
+                <p className="text-[#848383] flex items-center">
                   <FaEnvelope size={14} className="mr-2" />
                   {user.email}
                 </p>

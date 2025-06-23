@@ -4,7 +4,7 @@ export const config = {
   API_BASE_URL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api',
   
   // Google OAuth Configuration
-  GOOGLE_CLIENT_ID: import.meta.env.VITE_GOOGLE_CLIENT_ID || 'YOUR_GOOGLE_CLIENT_ID',
+  GOOGLE_CLIENT_ID: import.meta.env.VITE_GOOGLE_CLIENT_ID,
   
   // Environment
   NODE_ENV: import.meta.env.NODE_ENV || 'development',

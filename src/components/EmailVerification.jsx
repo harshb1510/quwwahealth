@@ -49,7 +49,7 @@ const EmailVerification = () => {
             <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
               Email Verified!
             </h2>
-            <p className="mt-2 text-sm text-gray-600">
+            <p className="mt-2 text-sm text-[#848383]">
               Your email has been successfully verified. You can now log in to your account.
             </p>
           </div>
@@ -79,7 +79,7 @@ const EmailVerification = () => {
             <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
               Verification Failed
             </h2>
-            <p className="mt-2 text-sm text-gray-600">
+            <p className="mt-2 text-sm text-[#848383]">
               {error || 'The verification link is invalid or has expired.'}
             </p>
           </div>
@@ -108,7 +108,7 @@ const EmailVerification = () => {
           <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
             Verify Your Email
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-[#848383]">
             {emailVerificationSent 
               ? 'A new verification email has been sent to your email address.'
               : 'Please check your email for a verification link or request a new one.'
@@ -181,7 +181,7 @@ const EmailVerification = () => {
         </form>
 
         <div className="text-center">
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-[#A6A6A6]">
             Didn't receive the email? Check your spam folder or try a different email address.
           </p>
         </div>

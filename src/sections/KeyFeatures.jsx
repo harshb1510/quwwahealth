@@ -22,7 +22,7 @@ const KeyFeatures = () => {
     <section className="py-20 bg-yellow-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800">Key Features</h2>
+          <p className="text-4xl md:text-5xl font-bold text-gray-800">Key Features</p>
           <div className="flex justify-center mt-2">
             <svg width="284" height="40" viewBox="0 0 284 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_1_13202)">
@@ -43,7 +43,7 @@ const KeyFeatures = () => {
               <div className="flex-shrink-0 bg-white p-4 rounded-lg shadow-md">
                 {feature.icon}
               </div>
-              <p className="text-gray-600 font-medium">{feature.text}</p>
+              <p className="text-[#848383] font-medium">{feature.text}</p>
             </div>
           ))}
         </div>

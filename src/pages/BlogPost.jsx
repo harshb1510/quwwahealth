@@ -113,7 +113,7 @@ const BlogPost = () => {
                             <a 
                                 href={`#${heading.id}`}
                                 onClick={(e) => handleLinkClick(e, heading.id)}
-                                className="text-gray-600 hover:text-blue-600 transition-colors font-medium border-l-2 border-transparent hover:border-blue-600 pl-3 block"
+                                className="text-[#848383] hover:text-blue-600 transition-colors font-medium border-l-2 border-transparent hover:border-blue-600 pl-3 block"
                             >
                                 {heading.title}
                             </a>
