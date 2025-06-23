@@ -146,7 +146,7 @@ const UserProfile = () => {
             </div>
 
             {/* Additional User Info */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Account Type
@@ -163,7 +163,7 @@ const UserProfile = () => {
                   {user.isEmailVerified ? 'Yes' : 'No'}
                 </p>
               </div>
-            </div>
+            </div> */}
 
             {/* Action Buttons */}
             {isEditing && (
