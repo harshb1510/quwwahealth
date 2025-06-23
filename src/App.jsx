@@ -23,6 +23,7 @@ import AdminDashboard from './pages/Admin/AdminDashboard'
 import AdminBlogs from './pages/Admin/AdminBlogs'
 import AdminContacts from './pages/Admin/AdminContacts'
 import HolidayCamp from './pages/HolidayCamp'
+import Branding from './pages/Branding'
 
 function App() {
   const dispatch = useDispatch()
@@ -56,6 +57,7 @@ function App() {
           <Route path="blogs" element={<Blogs />} />
           <Route path="blog/:id" element={<BlogPost />} />
           <Route path="/holiday-camp" element={<HolidayCamp />} />
+          <Route path="/branding" element={<Branding />} />
           <Route path="auth" element={<Auth />} />
           <Route
             path="profile"

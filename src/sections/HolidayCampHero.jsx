@@ -148,52 +148,6 @@ const HolidayCampHero = () => {
           </div>
         </div>
       </section>
-
-      {/* Branding & Sponsorship Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* Text Content */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 ">Branding & Sponsorship</h2>
-            <p className="text-gray-700 mb-4 text-lg">Quwwa Health offers integrated branding and sponsorship opportunities for businesses looking to align with health, fitness, and education initiatives. From designing brand identities to executing high-impact sponsorships, we deliver creative and data-driven strategies that connect sponsors with engaged school communities.</p>
-            <div className="border-t-4 border-[#F3F25B] w-1/2 mb-2"/>
-            <h3 className="text-xl font-semibold mt-6 mb-2 ">Services Include:</h3>
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start text-[#A6A6A6]">
-                <span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>
-                Brand positioning and event integration
-              </li>
-              <li className="flex items-start text-[#A6A6A6]">
-                <span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>
-                Sponsorship deal structuring and activation
-              </li>
-              <li className="flex items-start text-[#A6A6A6]">
-                <span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>
-                Multi-channel campaign execution and reporting
-              </li>
-            </ul>
-            <h3 className="text-xl font-semibold mt-6 mb-2">Benefits:</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start text-[#A6A6A6]">
-                <span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>
-                Increases brand visibility in trusted community settings
-              </li>
-              <li className="flex items-start text-[#A6A6A6]">
-                <span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>
-                Supports CSR and wellness-based brand alignment
-              </li>
-              <li className="flex items-start text-[#A6A6A6]">
-                <span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>
-                Delivers measurable reach and engagement through school-based programs
-              </li>
-            </ul>
-          </div>
-          {/* Image Content */}
-          <div className="flex justify-center md:justify-end">
-            <img src={img10} alt="Branding & Sponsorship" className="w-full max-w-md rounded-2xl shadow-lg object-cover" />
-          </div>
-        </div>
-      </section>
     </>
   );
 };

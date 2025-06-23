@@ -59,15 +59,13 @@ const Header = () => {
           <NavLink to="/about" className={navLinkClasses}>About Us</NavLink>
           <NavLink to="/programs" className={navLinkClasses}>Our Programs</NavLink>
           <NavLink to="/holiday-camp" className={navLinkClasses}>Holiday Camp</NavLink>
-          <NavLink to="/contact" className={navLinkClasses}>Contact Us</NavLink>
+          <NavLink to="/branding" onClick={toggleMenu} className={navLinkClasses}>Branding Sponsorship</NavLink>
           <NavLink to="/blogs" className={navLinkClasses}>Blogs</NavLink>
         </nav>
 
         {/* Desktop Action Buttons */}
         <div className="hidden md:flex items-center space-x-4">
-          <button className="p-3 rounded-md bg-[#54BD95] hover:opacity-90 transition-opacity duration-300">
-            <FaSearch size={18} className="text-white" />
-          </button>
+
           
           {isAuthenticated && user ? (
             <div className="relative">
@@ -137,8 +135,8 @@ const Header = () => {
             <NavLink to="/about" onClick={toggleMenu} className={navLinkClasses}>About Us</NavLink>
             <NavLink to="/programs" onClick={toggleMenu} className={navLinkClasses}>Our Programs</NavLink>
             <NavLink to="/holiday-camp" onClick={toggleMenu} className={navLinkClasses}>Holiday Camp</NavLink>
+            <NavLink to="/branding" onClick={toggleMenu} className={navLinkClasses}>Branding Sponsorship</NavLink>
             
-            <NavLink to="/contact" onClick={toggleMenu} className={navLinkClasses}>Contact Us</NavLink>
             <NavLink to="/blogs" onClick={toggleMenu} className={navLinkClasses}>Blogs</NavLink>
             <hr className="w-full border-gray-200" />
             <div className="flex flex-col items-center space-y-4 w-full">

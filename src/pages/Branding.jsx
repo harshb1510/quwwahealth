@@ -1,24 +1,24 @@
 import React from 'react'
-import HolidayCampHero from '../sections/HolidayCampHero'
-import About from '../sections/About'
+import BrandingHero from '../sections/BrandingHero'
 import Highlights from '../sections/Highlights'
 import CTA from '../sections/CTA'
 import Programs from '../sections/Programs'
-import Services from '../sections/Services'
+import About from '../sections/About'
 import Testimonials from '../sections/Testimonials'
-import Contact from '../sections/Contact'
+import Footer from '../components/Footer'
 
-const HolidayCamp = () => {
+const Branding = () => {
   return (
-    <div className="holiday-camp">
-      <HolidayCampHero />
+    <div className="branding">
+      <BrandingHero />
       <Highlights />
       <CTA />
       <Programs />
       <About />
       <Testimonials />
+      <Footer />
     </div>
   )
 }
 
-export default HolidayCamp 
+export default Branding 
