@@ -12,17 +12,12 @@ const BlogEditor = ({ formData, onFormChange, onSave, onCancel, categories = [] 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    const finalCategory = showNewCategoryInput ? newCategory : formData.category;
-    
-    if (!finalCategory) {
-      alert('Please select or add a category.');
+    if (!formData.category) {
+      alert('Please enter a category.');
       return;
     }
-
     const submitData = {
       ...formData,
-      category: finalCategory,
       tags: formData.tags.split(',').map(tag => tag.trim()).filter(tag => tag)
     };
     onSave(submitData);
@@ -78,16 +73,7 @@ const BlogEditor = ({ formData, onFormChange, onSave, onCancel, categories = [] 
               
               <div className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
                 <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-2">Category</label>
-                {categories.length > 0 && (
-                  <select name="category" id="category" value={formData.category} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#54BD95]" required={!showNewCategoryInput}>
-                    <option value="">Select a category</option>
-                    {categories.map((category) => (<option key={category.name} value={category.name}>{category.name}</option>))}
-                    <option value="add-new">-- Add New Category --</option>
-                  </select>
-                )}
-                {showNewCategoryInput && (
-                  <input type="text" value={newCategory} onChange={(e) => setNewCategory(e.target.value)} className="mt-2 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#54BD95]" placeholder="Enter new category name" required />
-                )}
+                <input type="text" name="category" id="category" value={formData.category || ''} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#54BD95]" placeholder="Enter category name" required />
               </div>
 
               <div className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
@@ -96,22 +82,22 @@ const BlogEditor = ({ formData, onFormChange, onSave, onCancel, categories = [] 
               </div>
               
               <div className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
-                <label htmlFor="featuredImage" className="block text-sm font-medium text-gray-700 mb-2">Featured Image URL</label>
-                <input type="url" name="featuredImage" id="featuredImage" value={formData.featuredImage} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#54BD95]" placeholder="https://example.com/image.png" />
+                <label htmlFor="featured_image" className="block text-sm font-medium text-gray-700 mb-2">Featured Image URL</label>
+                <input type="url" name="featured_image" id="featured_image" value={formData.featured_image} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#54BD95]" placeholder="https://example.com/image.png" />
               </div>
               
               <div className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
                 <h3 className="text-lg font-medium text-gray-900 mb-4">SEO Settings</h3>
                 <div className="space-y-4">
                   <div>
-                    <label htmlFor="metaTitle" className="block text-sm font-medium text-gray-700 mb-1">Meta Title</label>
-                    <input type="text" name="metaTitle" id="metaTitle" value={formData.metaTitle} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#54BD95]" placeholder="SEO title (max 60 chars)" maxLength="60" />
-                    <p className="text-xs text-right text-[#A6A6A6] mt-1">{formData.metaTitle?.length || 0}/60</p>
+                    <label htmlFor="meta_title" className="block text-sm font-medium text-gray-700 mb-1">Meta Title</label>
+                    <input type="text" name="meta_title" id="meta_title" value={formData.meta_title} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#54BD95]" placeholder="SEO title (max 60 chars)" maxLength="60" />
+                    <p className="text-xs text-right text-[#A6A6A6] mt-1">{formData.meta_title?.length || 0}/60</p>
                   </div>
                   <div>
-                    <label htmlFor="metaDescription" className="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>
-                    <textarea name="metaDescription" id="metaDescription" rows="3" value={formData.metaDescription} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#54BD95]" placeholder="SEO description (max 160 chars)" maxLength="160"></textarea>
-                    <p className="text-xs text-right text-[#A6A6A6] mt-1">{formData.metaDescription?.length || 0}/160</p>
+                    <label htmlFor="meta_description" className="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>
+                    <textarea name="meta_description" id="meta_description" rows="3" value={formData.meta_description} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#54BD95]" placeholder="SEO description (max 160 chars)" maxLength="160"></textarea>
+                    <p className="text-xs text-right text-[#A6A6A6] mt-1">{formData.meta_description?.length || 0}/160</p>
                   </div>
                 </div>
               </div>
