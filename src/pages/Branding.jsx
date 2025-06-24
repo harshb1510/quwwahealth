@@ -16,7 +16,6 @@ const Branding = () => {
       <Programs />
       <About />
       <Testimonials />
-      <Footer />
     </div>
   )
 }
