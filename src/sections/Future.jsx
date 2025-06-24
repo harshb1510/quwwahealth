@@ -67,8 +67,9 @@ const Future = () => {
           {/* Block 3 */}
           <div className="flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-lg">
             <div className="md:w-1/2 bg-[#54BD95] text-white p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16 flex flex-col justify-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[800] mb-4 sm:mb-6 md:mb-8 leading-tight">Comprehensive health monitoring</p>
-              <p className="mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-base sm:text-lg md:text-xl lg:text-2xl font-[400] leading-relaxed">Tailor educational strategies with data driven insights to enhance student health now into the future</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[800] mb-4 sm:mb-6 md:mb-8 leading-tight">Link between Fitness and
+              academic excellence</p>
+              <p className="mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-base sm:text-lg md:text-xl lg:text-2xl font-[400] leading-relaxed">Schools committed to regular fitness assessment witness healthier students with heightened concentration cognitive function and overall academic excellence.</p>
               <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                 <button className="bg-white text-green-600 font-semibold text-sm sm:text-base md:text-lg py-2 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8 rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors" onClick={() => navigate('/contact')}>
                   Get in touch <ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 ml-2" />

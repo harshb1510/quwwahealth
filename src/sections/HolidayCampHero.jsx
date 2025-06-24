@@ -46,7 +46,7 @@ const SvgBackground = () => (
 const HolidayCampHero = () => {
   return (
     <>
-      <section className="py-12 md:py-24 bg-gradient-to-r from-white to-green-50">
+      <section className="py-12 md:py-24 bg-gradient-to-r from-white to-green-50 px-3 sm:px-6 md:px-10 lg:px-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             {/* Left Column: Text Content */}
@@ -100,7 +100,7 @@ const HolidayCampHero = () => {
       </section>
 
       {/* Holiday Camps Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white px-3 sm:px-6 md:px-10 lg:px-16">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Text Content */}
           <div>
@@ -122,7 +122,7 @@ const HolidayCampHero = () => {
       </section>
 
       {/* Sports & Branded Events Organization Section */}
-      <section className="py-16 bg-[#F8FAF8]">
+      <section className="py-16 bg-[#F8FAF8] px-3 sm:px-6 md:px-10 lg:px-16">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Image Content (on left for variety) */}
           <div className="order-2 md:order-1 flex justify-center md:justify-start">

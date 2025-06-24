@@ -45,7 +45,7 @@ const SvgBackground = () => (
 
 const Hero = () => {
   return (
-    <section className="py-12 md:py-20 lg:py-24 bg-gradient-to-r from-white to-green-50">
+    <section className="py-12 md:py-20 lg:py-24 bg-gradient-to-r from-white to-green-50 px-6">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-center">
           {/* Left Column: Text Content */}
@@ -56,7 +56,7 @@ const Hero = () => {
               Futures <br className="hidden sm:block" /> Together!
             </p>
             <div className="flex justify-center md:justify-start my-4 sm:my-6">
-              <svg width="487" height="34" viewBox="0 0 487 34" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-[250px] sm:max-w-sm h-auto">
+              <svg width="500" height="34" viewBox="0 0 487 34" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-auto">
                 <path d="M4 30C73.6307 10.3798 266.914 -17.0885 483 30" stroke="#54BD95" strokeWidth="8" strokeLinecap="round"/>
               </svg>
             </div>

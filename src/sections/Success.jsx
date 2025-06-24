@@ -3,7 +3,7 @@ import studentImage from '../assets/images/AboutUs/child.png';
 
 const Success = () => {
   return (
-    <section className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 via-yellow-50 to-white">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-yellow-50 via-yellow-50 to-white px-6 sm:px-8 lg:px-12">
       <div className="container mx-auto">
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800">

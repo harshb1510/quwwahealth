@@ -47,7 +47,7 @@ const Highlights = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 lg:py-32 bg-[#F9F8FE]">
+    <section className="py-20 md:py-28 lg:py-32 bg-[#F9F8FE] px-6 sm:px-8 lg:px-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
           {/* Left Column */}

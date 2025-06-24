@@ -5,9 +5,9 @@ import amandaImage from '../assets/images/About/image1.png'; // Placeholder for 
 
 const About = () => {
   return (
-    <section className="py-16 md:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-white to-green-50">
+    <section className="py-16 md:py-20 lg:py-28  bg-gradient-to-r from-white to-green-50 px-6 sm:px-8 lg:px-14">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-16">
+        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 lg:gap-10">
           {/* Left Column */}
           <div className="md:w-1/2">
             <p className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight md:leading-[110%] lg:leading-[120%] tracking-[0%] text-gray-800 mb-8 md:mb-12 lg:mb-14 w-full md:w-3/4">

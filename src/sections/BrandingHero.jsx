@@ -72,7 +72,7 @@ const BrandingHero = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-12 md:py-24 bg-gradient-to-r from-white to-green-50">
+      <section className="py-12 md:py-24 bg-gradient-to-r from-white to-green-50 px-3 sm:px-6 md:px-10 lg:px-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             {/* Left Column: Text Content */}
@@ -129,7 +129,7 @@ const BrandingHero = () => {
       </section>
 
       {/* Services & Benefits Section */}
-      <section className="py-12 md:py-16 lg:py-20 bg-white">
+      <section className="py-12 md:py-16 lg:py-20 bg-white px-3 sm:px-6 md:px-10 lg:px-16">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
           {/* Services */}
           <div>
@@ -159,7 +159,7 @@ const BrandingHero = () => {
       </section>
 
       {/* Brands Partnership Section */}
-      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-r from-green-50 to-white">
+      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-r from-green-50 to-white px-3 sm:px-6 md:px-10 lg:px-16">
         <div className="container mx-auto px-4">
           {/* Section Header */}
           <div className="text-center mb-12 md:mb-16">
@@ -181,11 +181,11 @@ const BrandingHero = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16 items-center justify-items-center">
             {brandLogos.map((brand, index) => (
               <div key={index} className="flex flex-col items-center group">
-                <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-white shadow-lg border-4 border-[#52BD94] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 overflow-hidden">
+                <div className=" sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40  shadow-lg  flex items-center justify-center transition-transform duration-300 group-hover:scale-110 overflow-hidden">
                   <img 
                     src={brand.image} 
                     alt={brand.name}
-                    className="w-full h-full object-cover rounded-full"
+                    className="w-full h-full object-contain "
                   />
                 </div>
                 <p className="mt-3 md:mt-4 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-600 font-medium text-center">

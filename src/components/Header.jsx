@@ -44,8 +44,8 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-sm relative">
-      <div className="container mx-auto flex items-center justify-between p-3 sm:p-4 md:p-5">
+    <header className="bg-white shadow-sm relative px-4">
+      <div className="container  mx-auto flex items-center justify-between p-3 sm:p-4 md:p-8 lg-6">
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center cursor-pointer">
@@ -58,9 +58,8 @@ const Header = () => {
           <NavLink to="/" className={navLinkClasses}>Home</NavLink>
           <NavLink to="/about" className={navLinkClasses}>About Us</NavLink>
           <NavLink to="/programs" className={navLinkClasses}>Our Programs</NavLink>
-          <NavLink to="/holiday-camp" className={navLinkClasses}>Holiday Camp</NavLink>
-          <NavLink to="/branding" onClick={toggleMenu} className={navLinkClasses}>Branding Sponsorship</NavLink>
           <NavLink to="/blogs" className={navLinkClasses}>Blogs</NavLink>
+          <NavLink to="/contact" className={navLinkClasses}>Contact Us</NavLink>
         </nav>
 
         {/* Desktop Action Buttons */}
@@ -132,9 +131,7 @@ const Header = () => {
             <NavLink to="/" onClick={toggleMenu} className={navLinkClasses}>Home</NavLink>
             <NavLink to="/about" onClick={toggleMenu} className={navLinkClasses}>About Us</NavLink>
             <NavLink to="/programs" onClick={toggleMenu} className={navLinkClasses}>Our Programs</NavLink>
-            <NavLink to="/holiday-camp" onClick={toggleMenu} className={navLinkClasses}>Holiday Camp</NavLink>
-            <NavLink to="/branding" onClick={toggleMenu} className={navLinkClasses}>Branding Sponsorship</NavLink>
-            
+            <NavLink to="/contact" onClick={toggleMenu} className={navLinkClasses}>Contact Us</NavLink>
             <NavLink to="/blogs" onClick={toggleMenu} className={navLinkClasses}>Blogs</NavLink>
             <hr className="w-full border-gray-200" />
             <div className="flex flex-col items-center space-y-3 sm:space-y-4 w-full">
