@@ -26,7 +26,20 @@ import img18 from '../assets/images/Holiday/WhatsApp Image 2025-06-23 at 16.49.5
 import img19 from '../assets/images/Holiday/WhatsApp Image 2025-06-23 at 16.49.59 (2).jpeg';
 import img20 from '../assets/images/Holiday/WhatsApp Image 2025-06-23 at 16.50.00.jpeg';
 
+// Brand images
+import brand1 from '../assets/images/Brands/WhatsApp Image 2025-06-23 at 23.16.49.jpeg';
+import brand2 from '../assets/images/Brands/WhatsApp Image 2025-06-23 at 23.16.50 (1).jpeg';
+import brand3 from '../assets/images/Brands/WhatsApp Image 2025-06-23 at 23.16.50 (2).jpeg';
+import brand4 from '../assets/images/Brands/WhatsApp Image 2025-06-23 at 23.16.50.jpeg';
+
 const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20];
+
+const brandLogos = [
+  { image: brand1, name: 'Alpro' },
+  { image: brand2, name: 'Yoga Association Bhopal' },
+  { image: brand3, name: 'Partner Brand 3' },
+  { image: brand4, name: 'Doon Public School' }
+];
 
 const SvgBackground = () => (
   <svg className="absolute inset-0 w-full h-full" viewBox="0 0 636 526" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -142,6 +155,47 @@ const BrandingHero = () => {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Brands Partnership Section */}
+      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-r from-green-50 to-white">
+        <div className="container mx-auto px-4">
+          {/* Section Header */}
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 mb-4">
+              Brands that have benefitted from our partnership
+            </h2>
+            <div className="flex justify-center my-6">
+             <svg width="284" height="40" viewBox="0 0 284 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.035 0.697709C160.838 1.32266 140.654 2.37085 120.504 3.84229C102.218 4.16634 83.9295 4.49039 65.644 4.81443C45.5795 5.17155 25.515 5.52535 5.45383 5.88247C3.51286 5.91553 0.507153 7.34068 0.209558 9.49328C-0.117796 11.8674 2.81847 12.2642 4.47177 12.2378C17.5097 12.0063 30.5477 11.7748 43.5856 11.5434C38.1595 12.2345 32.7399 12.952 27.3204 13.7026C25.4423 13.9638 22.8201 14.8434 22.2216 16.8968C21.686 18.7286 23.3591 20.0281 25.1347 20.0612C55.2447 20.577 85.3579 21.0962 115.468 21.612C121.876 21.7211 128.284 21.8335 134.693 21.9426C125.474 22.9512 116.268 24.1118 107.089 25.4245C92.6953 27.4878 78.3612 29.9347 64.0899 32.7222C62.549 33.0231 60.3633 34.3722 60.1286 36.1015C59.9004 37.7548 61.7223 38.8361 63.1839 38.8493C97.4271 39.1469 131.67 39.4478 165.913 39.7454C175.569 39.8281 185.221 39.914 194.876 39.9967C197.088 40.0165 199.925 39.385 201.04 37.2126C202.035 35.2683 200.17 33.6513 198.269 33.6348C165.305 33.3471 132.342 33.0595 99.378 32.7718C100.297 32.6329 101.213 32.4907 102.132 32.3551C114.588 30.5101 127.087 28.946 139.613 27.6664C164.677 25.1071 189.853 23.6819 215.046 23.4009C216.161 23.3876 217.288 23.381 218.412 23.3744C231.183 23.5926 243.949 23.8142 256.719 24.0324C258.928 24.0688 261.775 23.4075 262.883 21.2483C263.901 19.2643 261.997 17.7466 260.112 17.6705C247.081 17.1481 234.036 16.9232 220.995 16.9993C203.923 16.705 186.851 16.414 169.779 16.1197C139.669 15.6039 109.556 15.0847 79.4457 14.5689C77.0187 14.5259 74.5883 14.4863 72.1613 14.4433C87.9272 12.7668 103.72 11.3483 119.532 10.1943C152.495 9.60901 185.462 9.02705 218.426 8.44178C238.49 8.08467 258.555 7.73086 278.616 7.37374C280.458 7.34068 283.162 6.07756 283.715 4.17956C284.257 2.32456 282.57 1.08127 280.801 1.01514C247.56 -0.221528 214.279 -0.330646 181.035 0.697709Z" fill="#F3F25B"/>
+</svg>
+
+            </div>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#A6A6A6] font-medium max-w-3xl mx-auto">
+              We've partnered with leading brands to create meaningful health and wellness initiatives that drive real impact in school communities.
+            </p>
+          </div>
+
+          {/* Brand Logos Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16 items-center justify-items-center">
+            {brandLogos.map((brand, index) => (
+              <div key={index} className="flex flex-col items-center group">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-white shadow-lg border-4 border-[#52BD94] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 overflow-hidden">
+                  <img 
+                    src={brand.image} 
+                    alt={brand.name}
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <p className="mt-3 md:mt-4 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-600 font-medium text-center">
+                  {brand.name}
+                </p>
+              </div>
+            ))}
+          </div>
+
+     
         </div>
       </section>
     </>
