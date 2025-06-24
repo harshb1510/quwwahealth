@@ -34,7 +34,7 @@ const Header = () => {
   };
 
   const navLinkClasses = ({ isActive }) =>
-    `text-sm sm:text-base md:text-lg font-medium transition-colors duration-300 ${isActive ? 'font-bold text-black' : 'text-[#A6A6A6] hover:text-black'}`;
+    `text-sm sm:text-base md:text-[1.05rem] lg:text-lg font-medium md:font-semibold lg:font-medium whitespace-nowrap transition-colors duration-300 ${isActive ? 'font-semibold text-black' : 'text-[#A6A6A6] hover:text-black'}`;
 
   const renderUserAvatar = () => {
     if (user?.avatar) {
@@ -44,17 +44,17 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-sm relative px-4">
-      <div className="container  mx-auto flex items-center justify-between p-3 sm:p-4 md:p-8 lg-6">
+    <header className="bg-white shadow-sm relative px-3 sm:px-4 md:px-6 lg:px-8">
+      <div className="container mx-auto flex items-center justify-between p-3 sm:p-4 md:py-4 md:px-6 lg:py-8 lg:px-10">
         {/* Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center h-full">
           <Link to="/" className="flex items-center cursor-pointer">
-            <img src={Logo} alt="QuwwaHealth Logo" className="h-10 sm:h-12 md:h-16 lg:h-20 w-auto" />
+            <img src={Logo} alt="QuwwaHealth Logo" className="h-10 sm:h-12 md:h-10 lg:h-20 w-auto" />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
+        <nav className="hidden lg:flex items-center space-x-3 md:space-x-4 lg:space-x-8">
           <NavLink to="/" className={navLinkClasses}>Home</NavLink>
           <NavLink to="/about" className={navLinkClasses}>About Us</NavLink>
           <NavLink to="/programs" className={navLinkClasses}>Our Programs</NavLink>
@@ -63,15 +63,15 @@ const Header = () => {
         </nav>
 
         {/* Desktop Action Buttons */}
-        <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
+        <div className="hidden lg:flex items-center space-x-2 md:space-x-3 lg:space-x-6">
           {isAuthenticated && user ? (
             <div className="relative">
               <button
                 onClick={toggleUserMenu}
-                className="flex items-center space-x-2 text-sm sm:text-base md:text-lg font-medium text-gray-700 hover:text-black transition-colors duration-300 px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5"
+                className="flex items-center space-x-2 text-sm sm:text-base md:text-[1.05rem] lg:text-lg font-medium text-gray-700 hover:text-black transition-colors duration-300 px-2 sm:px-3 md:px-3 py-1.5 sm:py-2 md:py-2.5"
               >
                 {renderUserAvatar()}
-                <span className="hidden md:inline text-sm lg:text-lg">{user?.name || 'User'}</span>
+                <span className="hidden md:inline text-sm md:text-[1.05rem] lg:text-lg">{user?.name || 'User'}</span>
               </button>
               
               {isUserMenuOpen && (
@@ -108,8 +108,8 @@ const Header = () => {
             </div>
           ) : (
             <>
-              <Link to="/auth" className="text-sm sm:text-base md:text-lg font-medium text-[#A6A6A6] hover:text-black transition-colors duration-300 px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5">Login</Link>
-              <Link to="/auth?mode=signup" className="text-sm sm:text-base md:text-lg font-medium bg-[#54BD95] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-lg hover:opacity-90 transition-opacity duration-300">
+              <Link to="/auth" className="text-sm sm:text-base md:text-[1.05rem] font-medium text-[#A6A6A6] hover:text-black transition-colors duration-300 px-2 sm:px-3 md:px-3 py-1.5 sm:py-2 md:py-2.5">Login</Link>
+              <Link to="/auth?mode=signup" className="text-sm sm:text-base md:text-[1.05rem] font-medium bg-[#54BD95] text-white px-3 sm:px-4 md:px-4 py-2 sm:py-2.5 md:py-2.5 rounded-lg hover:opacity-90 transition-opacity duration-300 min-w-[90px] md:min-w-[100px] lg:min-w-[120px] text-center">
                 Sign Up
               </Link>
             </>
@@ -117,7 +117,7 @@ const Header = () => {
         </div>
         
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button onClick={toggleMenu} className="text-black focus:outline-none p-2">
             {isMenuOpen ? <FaTimes className="w-6 h-6 sm:w-7 sm:h-7" /> : <FaBars className="w-6 h-6 sm:w-7 sm:h-7" />}
           </button>
@@ -126,7 +126,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg z-20">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-lg z-20">
           <nav className="flex flex-col items-center space-y-3 sm:space-y-4 p-4 sm:p-6">
             <NavLink to="/" onClick={toggleMenu} className={navLinkClasses}>Home</NavLink>
             <NavLink to="/about" onClick={toggleMenu} className={navLinkClasses}>About Us</NavLink>
