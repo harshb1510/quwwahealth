@@ -78,16 +78,16 @@ const SignupForm = ({ onSwitchMode }) => {
           <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-6">
             <FaEnvelope className="h-8 w-8 text-green-600" />
           </div>
-          <h1 className="text-3xl font-bold mb-4 text-gray-900">Check Your Email</h1>
-          <p className="text-lg text-[#848383] mb-6">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold mb-4 text-gray-900">Check Your Email</h1>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#848383] mb-6">
             We've sent a verification email to <strong>{formData.email}</strong>
           </p>
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
             <div className="flex items-start">
               <FaCheckCircle className="h-5 w-5 text-blue-500 mt-0.5 mr-3" />
               <div className="text-left">
-                <p className="text-sm text-blue-800 font-medium mb-2">Next Steps:</p>
-                <ul className="text-sm text-blue-700 space-y-1">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-blue-800 font-medium mb-2">Next Steps:</p>
+                <ul className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-blue-700 space-y-1">
                   <li>• Check your email inbox (and spam folder)</li>
                   <li>• Click the verification link in the email</li>
                   <li>• Return here to log in once verified</li>
@@ -111,18 +111,18 @@ const SignupForm = ({ onSwitchMode }) => {
                 });
                 setAcceptTerms(false);
               }}
-              className="w-full bg-[#54BD95] text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-colors"
+              className="w-full bg-[#54BD95] text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-colors text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
             >
               Sign Up Another Account
             </button>
             <button
               onClick={onSwitchMode}
-              className="w-full bg-gray-200 text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors"
+              className="w-full bg-gray-200 text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
             >
               Back to Login
             </button>
           </div>
-          <p className="text-xs text-[#A6A6A6] mt-6">
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-[#A6A6A6] mt-6">
             Didn't receive the email? Check your spam folder or contact support.
           </p>
         </div>
@@ -133,15 +133,15 @@ const SignupForm = ({ onSwitchMode }) => {
   return (
     <div className="w-full max-w-lg mx-auto">
       <div className="text-center">
-        <h1 className="text-4xl font-bold mb-6">Sign up</h1>
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold mb-6">Sign up</h1>
 
         {error && (
           <div className="mb-4 p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded-lg text-left">
-            <p className="font-bold">{typeof error === 'string' ? error : error.message || 'An error occurred'}</p>
+            <p className="font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">{typeof error === 'string' ? error : error.message || 'An error occurred'}</p>
             {error.errors && (
               <ul className="list-disc list-inside mt-2">
                 {error.errors.map((err, index) => (
-                  <li key={index}>{err.msg}</li>
+                  <li key={index} className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">{err.msg}</li>
                 ))}
               </ul>
             )}
@@ -166,7 +166,7 @@ const SignupForm = ({ onSwitchMode }) => {
 
         <div className="flex items-center my-8">
           <div className="flex-grow border-t border-gray-300"></div>
-          <span className="flex-shrink mx-4 text-gray-400 text-sm">Or</span>
+          <span className="flex-shrink mx-4 text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">Or</span>
           <div className="flex-grow border-t border-gray-300"></div>
         </div>
       </div>
@@ -174,7 +174,7 @@ const SignupForm = ({ onSwitchMode }) => {
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5 text-left mb-5">
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-1" htmlFor="name">
+            <label className="block text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-gray-800 mb-1" htmlFor="name">
               Full Name
             </label>
             <input 
@@ -182,12 +182,12 @@ const SignupForm = ({ onSwitchMode }) => {
               id="name" 
               value={formData.name}
               onChange={handleInputChange}
-              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-1" htmlFor="email">
+            <label className="block text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-gray-800 mb-1" htmlFor="email">
               Email
             </label>
             <input 
@@ -195,7 +195,7 @@ const SignupForm = ({ onSwitchMode }) => {
               id="email" 
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
               required
             />
           </div>
@@ -203,7 +203,7 @@ const SignupForm = ({ onSwitchMode }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5 text-left mb-5">
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-1" htmlFor="schoolName">
+            <label className="block text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-gray-800 mb-1" htmlFor="schoolName">
               School Name
             </label>
             <input 
@@ -211,11 +211,11 @@ const SignupForm = ({ onSwitchMode }) => {
               id="schoolName" 
               value={formData.schoolName}
               onChange={handleInputChange}
-              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-1" htmlFor="userId">
+            <label className="block text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-gray-800 mb-1" htmlFor="userId">
               User ID
             </label>
             <input 
@@ -223,14 +223,14 @@ const SignupForm = ({ onSwitchMode }) => {
               id="userId" 
               value={formData.userId}
               onChange={handleInputChange}
-              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-5 text-left mb-5">
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-1" htmlFor="district">
+            <label className="block text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-gray-800 mb-1" htmlFor="district">
               District
             </label>
             <input 
@@ -238,11 +238,11 @@ const SignupForm = ({ onSwitchMode }) => {
               id="district" 
               value={formData.district}
               onChange={handleInputChange}
-              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-1" htmlFor="state">
+            <label className="block text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-gray-800 mb-1" htmlFor="state">
               State
             </label>
             <input 
@@ -250,11 +250,11 @@ const SignupForm = ({ onSwitchMode }) => {
               id="state" 
               value={formData.state}
               onChange={handleInputChange}
-              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-1" htmlFor="country">
+            <label className="block text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-gray-800 mb-1" htmlFor="country">
               Country
             </label>
             <input 
@@ -262,13 +262,13 @@ const SignupForm = ({ onSwitchMode }) => {
               id="country" 
               value={formData.country}
               onChange={handleInputChange}
-              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
             />
           </div>
         </div>
         
         <div className="text-left mb-5">
-          <label className="block text-sm font-semibold text-gray-800 mb-1" htmlFor="password">
+          <label className="block text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-gray-800 mb-1" htmlFor="password">
             Password
           </label>
           <input 
@@ -277,12 +277,12 @@ const SignupForm = ({ onSwitchMode }) => {
             value={formData.password}
             onChange={handleInputChange}
             placeholder="6+ characters" 
-            className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full p-3 bg-gray-100 rounded-lg border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
             required
           />
         </div>
 
-        <div className="flex items-start gap-3 mb-6 text-left text-sm text-[#A6A6A6]">
+        <div className="flex items-start gap-3 mb-6 text-left text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#A6A6A6]">
           <input 
             type="checkbox" 
             id="terms" 
@@ -299,20 +299,20 @@ const SignupForm = ({ onSwitchMode }) => {
             <button
                 type="submit"
                 disabled={loading || !acceptTerms}
-                className="w-full md:w-auto bg-[#EC4899] text-white font-bold py-3 px-12 rounded-lg hover:bg-pink-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full md:w-auto bg-[#EC4899] text-white font-bold py-3 px-12 rounded-lg hover:bg-pink-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
             >
                 {loading ? 'Creating Account...' : 'Create Account'}
             </button>
         </div>
 
-        <p className="text-center text-sm text-[#848383] mt-8">
+        <p className="text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#848383] mt-8">
           Already a member?{' '}
           <button type="button" onClick={onSwitchMode} className="font-medium text-purple-600 hover:text-purple-800">
             Sign In
           </button>
         </p>
 
-        <p className="text-xs text-gray-400 mt-8 text-center">
+        <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 mt-8 text-center">
           This site is protected by reCAPTCHA and the Google <a href="#" className="underline">Privacy Policy</a> and <a href="#" className="underline">Terms of Service</a> apply.
         </p>
       </form>

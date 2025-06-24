@@ -64,7 +64,7 @@ const BrandingHero = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             {/* Left Column: Text Content */}
             <div className="text-center md:text-left p-10">
-              <p className="font-bold text-[60px] md:text-[75px] leading-tight md:leading-[76px] tracking-[0%] text-gray-800 mb-4">
+              <p className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[75px] leading-tight md:leading-[76px] tracking-[0%] text-gray-800 mb-4">
                 Branding & <br /> Sponsorship
               </p>
               <div className="flex justify-center md:justify-start my-6">
@@ -72,7 +72,7 @@ const BrandingHero = () => {
                   <path d="M4 30C73.6307 10.3798 266.914 -17.0885 483 30" stroke="#54BD95" strokeWidth="8" strokeLinecap="round"/>
                 </svg>
               </div>
-              <p className="text-lg text-[#A6A6A6] font-medium max-w-xl mx-auto md:mx-0">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#A6A6A6] font-medium max-w-xl mx-auto md:mx-0">
                 Quwwa Health offers integrated branding and sponsorship opportunities for businesses looking to align with health, fitness, and education initiatives. From designing brand identities to executing high-impact sponsorships, we deliver creative and data-driven strategies that connect sponsors with engaged school communities.
               </p>
             </div>
@@ -104,10 +104,10 @@ const BrandingHero = () => {
                 </div>
                 {/* Navigation Arrows */}
                 <div className="swiper-button-prev-hero absolute top-1/2 left-4 -translate-x-1/2 z-20 cursor-pointer">
-                  <FiChevronLeft className="text-black text-6xl" />
+                  <FiChevronLeft className="text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl" />
                 </div>
                 <div className="swiper-button-next-hero absolute top-1/2 right-6 translate-x-1/2 z-20 cursor-pointer">
-                  <FiChevronRight className="text-black text-6xl" />
+                  <FiChevronRight className="text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl" />
                 </div>
               </div>
             </div>
@@ -116,15 +116,15 @@ const BrandingHero = () => {
       </section>
 
       {/* Services & Benefits Section */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10">
+      <section className="py-12 md:py-16 lg:py-20 bg-white">
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
           {/* Services */}
           <div>
-            <h3 className="text-2xl font-semibold mb-4 flex items-center gap-2"><FiStar className="text-[#F3F25B]" /> Services Include</h3>
-            <ul className="space-y-4">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 md:mb-6 flex items-center gap-2"><FiStar className="text-[#F3F25B] text-lg sm:text-xl md:text-2xl" /> Services Include</h3>
+            <ul className="space-y-4 md:space-y-6">
               {services.map((service, idx) => (
-                <li key={idx} className="flex items-start text-[#A6A6A6] text-lg">
-                  <FiCheckCircle className="text-[#52BD94] mt-1 mr-3" />
+                <li key={idx} className="flex items-start text-[#A6A6A6] text-sm sm:text-base md:text-lg lg:text-xl">
+                  <FiCheckCircle className="text-[#52BD94] mt-1 mr-3 flex-shrink-0 text-base sm:text-lg md:text-xl" />
                   {service}
                 </li>
               ))}
@@ -132,11 +132,11 @@ const BrandingHero = () => {
           </div>
           {/* Benefits */}
           <div>
-            <h3 className="text-2xl font-semibold mb-4 flex items-center gap-2"><FiStar className="text-[#F3F25B]" /> Benefits</h3>
-            <ul className="space-y-4">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 md:mb-6 flex items-center gap-2"><FiStar className="text-[#F3F25B] text-lg sm:text-xl md:text-2xl" /> Benefits</h3>
+            <ul className="space-y-4 md:space-y-6">
               {benefits.map((benefit, idx) => (
-                <li key={idx} className="flex items-start text-[#A6A6A6] text-lg">
-                  <FiCheckCircle className="text-[#52BD94] mt-1 mr-3" />
+                <li key={idx} className="flex items-start text-[#A6A6A6] text-sm sm:text-base md:text-lg lg:text-xl">
+                  <FiCheckCircle className="text-[#52BD94] mt-1 mr-3 flex-shrink-0 text-base sm:text-lg md:text-xl" />
                   {benefit}
                 </li>
               ))}

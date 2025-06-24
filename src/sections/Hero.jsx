@@ -45,28 +45,28 @@ const SvgBackground = () => (
 
 const Hero = () => {
   return (
-    <section className="py-12 md:py-24 bg-gradient-to-r from-white to-green-50">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <section className="py-12 md:py-20 lg:py-24 bg-gradient-to-r from-white to-green-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-center">
           {/* Left Column: Text Content */}
-          <div className="text-center md:text-left p-10">
-            <p className=" font-bold text-[75px] md:text-[75px] leading-tight md:leading-[76px] tracking-[0%] text-gray-800 mb-4">
-              Building <br /> Healthier
-              <br />
-              Futures <br /> Together!
+          <div className="text-center md:text-left p-6 sm:p-8 lg:p-10">
+            <p className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[75px] leading-tight sm:leading-tight md:leading-[76px] tracking-[0%] text-gray-800 mb-4">
+              Building <br className="hidden sm:block" /> Healthier
+              <br className="hidden sm:block" />
+              Futures <br className="hidden sm:block" /> Together!
             </p>
-            <div className="flex justify-center md:justify-start my-6">
-              <svg width="487" height="34" viewBox="0 0 487 34" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-sm h-auto">
+            <div className="flex justify-center md:justify-start my-4 sm:my-6">
+              <svg width="487" height="34" viewBox="0 0 487 34" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-[250px] sm:max-w-sm h-auto">
                 <path d="M4 30C73.6307 10.3798 266.914 -17.0885 483 30" stroke="#54BD95" strokeWidth="8" strokeLinecap="round"/>
               </svg>
             </div>
-            <p className="text-lg text-[#A6A6A6] font-medium">
-              Empowering kids to succeed with <br /> Healthy Body & Sharp Minds!
+            <p className="text-base sm:text-lg md:text-xl text-[#A6A6A6] font-medium max-w-xl mx-auto md:mx-0">
+              Empowering kids to succeed with <br className="hidden sm:block" /> Healthy Body & Sharp Minds!
             </p>
           </div>
 
           {/* Right Column: Image Slider */}
-          <div className="relative mt-8 md:mt-0 w-full">
+          <div className="relative mt-6 sm:mt-8 md:mt-0 w-full">
             <div className="relative aspect-[636/526]">
               <SvgBackground />
               <DecorativeIcons />
@@ -86,19 +86,24 @@ const Hero = () => {
                     >
                     {images.map((image, index) => (
                       <SwiperSlide key={index}>
-                        <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover rounded-b-2xl" />
+                        <img 
+                          src={image} 
+                          alt={`Slide ${index + 1}`} 
+                          className="w-full h-full object-cover rounded-b-2xl"
+                          loading="lazy"
+                        />
                       </SwiperSlide>
                     ))}
                 </Swiper>
               </div>
 
-                {/* Navigation Arrows */}
-                <div className="swiper-button-prev-hero absolute top-1/2 left-4 -translate-x-1/2 z-20 cursor-pointer">
-                    <FiChevronLeft className="text-black text-6xl" />
-                </div>
-                <div className="swiper-button-next-hero absolute top-1/2 right-6 translate-x-1/2 z-20 cursor-pointer">
-                    <FiChevronRight className="text-black text-6xl" />
-                </div>
+              {/* Navigation Arrows */}
+              <div className="swiper-button-prev-hero absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 z-20 cursor-pointer hidden sm:block">
+                <FiChevronLeft className="text-black text-4xl sm:text-5xl lg:text-6xl" />
+              </div>
+              <div className="swiper-button-next-hero absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 z-20 cursor-pointer hidden sm:block">
+                <FiChevronRight className="text-black text-4xl sm:text-5xl lg:text-6xl" />
+              </div>
             </div>
           </div>
         </div>
@@ -107,4 +112,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;

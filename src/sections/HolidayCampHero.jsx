@@ -51,7 +51,7 @@ const HolidayCampHero = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             {/* Left Column: Text Content */}
             <div className="text-center md:text-left p-10">
-              <p className=" font-bold text-[75px] md:text-[75px] leading-tight md:leading-[76px] tracking-[0%] text-gray-800 mb-4">
+              <p className=" font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[75px] leading-tight md:leading-[76px] tracking-[0%] text-gray-800 mb-4">
                 Holiday Camps <br /> (Summer & Winter Breaks)
               </p>
               <div className="flex justify-center md:justify-start my-6">
@@ -104,14 +104,14 @@ const HolidayCampHero = () => {
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Text Content */}
           <div>
-            <p className="font-bold  mb-4">Our Holiday Camps offer children a fun, safe, and energetic environment during school breaks. Activities include multi-sport games, creative workshops, fitness challenges, and wellness learning. Camps are open to children ages 5–14 and designed to encourage teamwork, independence, and healthy habits.</p>
+            <p className="font-bold text-sm sm:text-base md:text-lg lg:text-xl mb-4">Our Holiday Camps offer children a fun, safe, and energetic environment during school breaks. Activities include multi-sport games, creative workshops, fitness challenges, and wellness learning. Camps are open to children ages 5–14 and designed to encourage teamwork, independence, and healthy habits.</p>
             <div className="border-t-4 border-[#F3F25B] w-1/2 mb-2"/>
-            <h3 className="text-xl font-semibold mt-6 mb-2 ">Benefits:</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mt-6 mb-2 ">Benefits:</h3>
             <ul className="space-y-3 mb-6">
-              <li className="flex items-start text-[#A6A6A6]"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>Keeps children active and engaged during holidays</li>
-              <li className="flex items-start text-[#A6A6A6]"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>Encourages social interaction, creativity, and confidence</li>
-              <li className="flex items-start text-[#A6A6A6]"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>Supports WHO recommendations for daily physical activity</li>
-              <li className="flex items-start text-[#A6A6A6]"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>Reduces screen time and promotes healthier routines</li>
+              <li className="flex items-start text-[#A6A6A6] text-sm sm:text-base md:text-lg lg:text-xl"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full flex-shrink-0"></span>Keeps children active and engaged during holidays</li>
+              <li className="flex items-start text-[#A6A6A6] text-sm sm:text-base md:text-lg lg:text-xl"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full flex-shrink-0"></span>Encourages social interaction, creativity, and confidence</li>
+              <li className="flex items-start text-[#A6A6A6] text-sm sm:text-base md:text-lg lg:text-xl"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full flex-shrink-0"></span>Supports WHO recommendations for daily physical activity</li>
+              <li className="flex items-start text-[#A6A6A6] text-sm sm:text-base md:text-lg lg:text-xl"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full flex-shrink-0"></span>Reduces screen time and promotes healthier routines</li>
             </ul>
           </div>
           {/* Image Content */}
@@ -130,20 +130,20 @@ const HolidayCampHero = () => {
           </div>
           {/* Text Content */}
           <div className="order-1 md:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 ">Sports & Branded Events Organization</h2>
-            <p className="text-gray-700 mb-4 text-lg">Quwwa Health organizes high-energy sports days, fitness carnivals, inter-school tournaments, and branded wellness events to promote community engagement and a culture of health.</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ">Sports & Branded Events Organization</h2>
+            <p className="text-gray-700 mb-4 text-sm sm:text-base md:text-lg lg:text-xl">Quwwa Health organizes high-energy sports days, fitness carnivals, inter-school tournaments, and branded wellness events to promote community engagement and a culture of health.</p>
             <div className="border-t-4 border-[#F3F25B] w-1/2 mb-2"/>
-            <h3 className="text-xl font-semibold mt-6 mb-2 ">What We Provide:</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mt-6 mb-2 ">What We Provide:</h3>
             <ul className="space-y-3 mb-6">
-              <li className="flex items-start text-[#A6A6A6]"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>End-to-end event planning and execution</li>
-              <li className="flex items-start text-[#A6A6A6]"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>Branded decor, sports equipment, team coordination</li>
-              <li className="flex items-start text-[#A6A6A6]"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>Live fitness zones, challenges, and awareness booths</li>
+              <li className="flex items-start text-[#A6A6A6] text-sm sm:text-base md:text-lg lg:text-xl"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full flex-shrink-0"></span>End-to-end event planning and execution</li>
+              <li className="flex items-start text-[#A6A6A6] text-sm sm:text-base md:text-lg lg:text-xl"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full flex-shrink-0"></span>Branded decor, sports equipment, team coordination</li>
+              <li className="flex items-start text-[#A6A6A6] text-sm sm:text-base md:text-lg lg:text-xl"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full flex-shrink-0"></span>Live fitness zones, challenges, and awareness booths</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-6 mb-2">Benefits:</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mt-6 mb-2">Benefits:</h3>
             <ul className="space-y-3">
-              <li className="flex items-start text-[#A6A6A6]"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>Showcases the school's commitment to health and wellness</li>
-              <li className="flex items-start text-[#A6A6A6]"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>Enhances student motivation and participation</li>
-              <li className="flex items-start text-[#A6A6A6]"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full"></span>Builds positive brand visibility and parent-school relationships</li>
+              <li className="flex items-start text-[#A6A6A6] text-sm sm:text-base md:text-lg lg:text-xl"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full flex-shrink-0"></span>Showcases the school's commitment to health and wellness</li>
+              <li className="flex items-start text-[#A6A6A6] text-sm sm:text-base md:text-lg lg:text-xl"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full flex-shrink-0"></span>Enhances student motivation and participation</li>
+              <li className="flex items-start text-[#A6A6A6] text-sm sm:text-base md:text-lg lg:text-xl"><span className="inline-block w-3 h-3 mt-2 mr-3 bg-[#52BD94] rounded-full flex-shrink-0"></span>Builds positive brand visibility and parent-school relationships</li>
             </ul>
           </div>
         </div>

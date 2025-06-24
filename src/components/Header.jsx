@@ -34,27 +34,27 @@ const Header = () => {
   };
 
   const navLinkClasses = ({ isActive }) =>
-    `text-base font-medium transition-colors duration-300 ${isActive ? 'font-bold text-black' : 'text-[#A6A6A6] hover:text-black'}`;
+    `text-sm sm:text-base md:text-lg font-medium transition-colors duration-300 ${isActive ? 'font-bold text-black' : 'text-[#A6A6A6] hover:text-black'}`;
 
   const renderUserAvatar = () => {
     if (user?.avatar) {
-      return <img src={user.avatar} alt={user.name} className="w-8 h-8 rounded-full object-cover" />;
+      return <img src={user.avatar} alt={user.name} className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover" />;
     }
-    return <FaUser size={16} />;
+    return <FaUser className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />;
   };
 
   return (
     <header className="bg-white shadow-sm relative">
-      <div className="container mx-auto flex items-center justify-between p-4">
+      <div className="container mx-auto flex items-center justify-between p-3 sm:p-4 md:p-5">
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center cursor-pointer">
-            <img src={Logo} alt="QuwwaHealth Logo" className="h-14 mr-3" />
+            <img src={Logo} alt="QuwwaHealth Logo" className="h-10 sm:h-12 md:h-16 lg:h-20 w-auto" />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
           <NavLink to="/" className={navLinkClasses}>Home</NavLink>
           <NavLink to="/about" className={navLinkClasses}>About Us</NavLink>
           <NavLink to="/programs" className={navLinkClasses}>Our Programs</NavLink>
@@ -64,46 +64,44 @@ const Header = () => {
         </nav>
 
         {/* Desktop Action Buttons */}
-        <div className="hidden md:flex items-center space-x-4">
-
-          
+        <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
           {isAuthenticated && user ? (
             <div className="relative">
               <button
                 onClick={toggleUserMenu}
-                className="flex items-center space-x-2 text-base font-medium text-gray-700 hover:text-black transition-colors duration-300 px-4 py-2"
+                className="flex items-center space-x-2 text-sm sm:text-base md:text-lg font-medium text-gray-700 hover:text-black transition-colors duration-300 px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5"
               >
                 {renderUserAvatar()}
-                <span className="hidden md:inline">{user?.name || 'User'}</span>
+                <span className="hidden md:inline text-sm lg:text-lg">{user?.name || 'User'}</span>
               </button>
               
               {isUserMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                  <div className="px-4 py-2 text-sm text-gray-700 border-b">
-                    <div className="font-medium">{user?.name}</div>
-                    <div className="text-xs text-[#A6A6A6]">{user?.email}</div>
+                <div className="absolute right-0 mt-2 w-48 md:w-56 bg-white rounded-md shadow-lg py-1 z-50">
+                  <div className="px-4 py-2 border-b">
+                    <div className="font-medium text-sm sm:text-base md:text-lg text-gray-700">{user?.name}</div>
+                    <div className="text-xs sm:text-sm md:text-base text-[#A6A6A6]">{user?.email}</div>
                   </div>
                   {user.role === 'admin' && (
                     <Link
                       to="/admin/blogs"
                       onClick={() => setIsUserMenuOpen(false)}
-                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
+                      className="w-full text-left px-4 py-2 text-xs sm:text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
                     >
                       <span>Admin</span>
                     </Link>
                   )}
                   <button
                     onClick={handleProfileClick}
-                    className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
+                    className="w-full text-left px-4 py-2 text-xs sm:text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
                   >
-                    <FaUserCircle size={14} />
+                    <FaUserCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     <span>Profile</span>
                   </button>
                   <button
                     onClick={handleLogout}
-                    className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
+                    className="w-full text-left px-4 py-2 text-xs sm:text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
                   >
-                    <FaSignOutAlt size={14} />
+                    <FaSignOutAlt className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     <span>Logout</span>
                   </button>
                 </div>
@@ -111,18 +109,18 @@ const Header = () => {
             </div>
           ) : (
             <>
-              <Link to="/auth" className="text-base font-medium text-[#A6A6A6] hover:text-black transition-colors duration-300 px-4 py-2">Login</Link>
-              <Link to="/auth?mode=signup" className="text-base font-medium bg-[#54BD95] text-white px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity duration-300">
+              <Link to="/auth" className="text-sm sm:text-base md:text-lg font-medium text-[#A6A6A6] hover:text-black transition-colors duration-300 px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5">Login</Link>
+              <Link to="/auth?mode=signup" className="text-sm sm:text-base md:text-lg font-medium bg-[#54BD95] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-lg hover:opacity-90 transition-opacity duration-300">
                 Sign Up
               </Link>
             </>
           )}
         </div>
         
-        {/* Mobile Menu Button (Hamburger) */}
+        {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-black focus:outline-none">
-            {isMenuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
+          <button onClick={toggleMenu} className="text-black focus:outline-none p-2">
+            {isMenuOpen ? <FaTimes className="w-6 h-6 sm:w-7 sm:h-7" /> : <FaBars className="w-6 h-6 sm:w-7 sm:h-7" />}
           </button>
         </div>
       </div>
@@ -130,7 +128,7 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg z-20">
-          <nav className="flex flex-col items-center space-y-4 p-6">
+          <nav className="flex flex-col items-center space-y-3 sm:space-y-4 p-4 sm:p-6">
             <NavLink to="/" onClick={toggleMenu} className={navLinkClasses}>Home</NavLink>
             <NavLink to="/about" onClick={toggleMenu} className={navLinkClasses}>About Us</NavLink>
             <NavLink to="/programs" onClick={toggleMenu} className={navLinkClasses}>Our Programs</NavLink>
@@ -139,9 +137,9 @@ const Header = () => {
             
             <NavLink to="/blogs" onClick={toggleMenu} className={navLinkClasses}>Blogs</NavLink>
             <hr className="w-full border-gray-200" />
-            <div className="flex flex-col items-center space-y-4 w-full">
-              <button className="p-3 rounded-md bg-[#54BD95] hover:opacity-90 transition-opacity duration-300 w-full max-w-xs flex items-center justify-center">
-                <FaSearch size={18} className="text-white" />
+            <div className="flex flex-col items-center space-y-3 sm:space-y-4 w-full">
+              <button className="p-2.5 sm:p-3 rounded-md bg-[#54BD95] hover:opacity-90 transition-opacity duration-300 w-full max-w-xs flex items-center justify-center">
+                <FaSearch className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </button>
               
               {isAuthenticated && user ? (
@@ -149,15 +147,15 @@ const Header = () => {
                   <div className="w-full max-w-xs text-center py-2 border border-gray-300 rounded-lg flex items-center justify-center space-x-3">
                     {renderUserAvatar()}
                     <div>
-                      <div className="font-medium text-gray-800">{user?.name}</div>
-                      <div className="text-xs text-[#A6A6A6]">{user?.email}</div>
+                      <div className="font-medium text-gray-800 text-sm sm:text-base">{user?.name}</div>
+                      <div className="text-xs sm:text-sm text-[#A6A6A6]">{user?.email}</div>
                     </div>
                   </div>
                   {user.role === 'admin' && (
                     <Link
                       to="/admin/dashboard"
                       onClick={toggleMenu}
-                      className="text-base font-medium bg-gray-600 text-white px-6 py-2 rounded-lg hover:opacity-90 transition-opacity duration-300 w-full text-center max-w-xs flex items-center justify-center space-x-2"
+                      className="text-sm sm:text-base font-medium bg-gray-600 text-white px-4 sm:px-6 py-2 rounded-lg hover:opacity-90 transition-opacity duration-300 w-full text-center max-w-xs flex items-center justify-center space-x-2"
                     >
                       <span>Admin</span>
                     </Link>
@@ -165,9 +163,9 @@ const Header = () => {
                   <Link
                     to="/profile"
                     onClick={toggleMenu}
-                    className="text-base font-medium bg-[#54BD95] text-white px-6 py-2 rounded-lg hover:opacity-90 transition-opacity duration-300 w-full text-center max-w-xs flex items-center justify-center space-x-2"
+                    className="text-sm sm:text-base font-medium bg-[#54BD95] text-white px-4 sm:px-6 py-2 rounded-lg hover:opacity-90 transition-opacity duration-300 w-full text-center max-w-xs flex items-center justify-center space-x-2"
                   >
-                    <FaUserCircle size={16} />
+                    <FaUserCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                     <span>Profile</span>
                   </Link>
                   <button
@@ -175,16 +173,16 @@ const Header = () => {
                       handleLogout();
                       toggleMenu();
                     }}
-                    className="text-base font-medium bg-red-500 text-white px-6 py-2 rounded-lg hover:opacity-90 transition-opacity duration-300 w-full text-center max-w-xs flex items-center justify-center space-x-2"
+                    className="text-sm sm:text-base font-medium bg-red-500 text-white px-4 sm:px-6 py-2 rounded-lg hover:opacity-90 transition-opacity duration-300 w-full text-center max-w-xs flex items-center justify-center space-x-2"
                   >
-                    <FaSignOutAlt size={16} />
+                    <FaSignOutAlt className="w-4 h-4 sm:w-5 sm:h-5" />
                     <span>Logout</span>
                   </button>
                 </>
               ) : (
                 <>
-                  <Link to="/auth" onClick={toggleMenu} className="text-base font-medium text-[#A6A6A6] hover:text-black transition-colors duration-300 border border-gray-300 px-6 py-2 rounded-lg w-full text-center max-w-xs">Login</Link>
-                  <Link to="/auth?mode=signup" onClick={toggleMenu} className="text-base font-medium bg-[#54BD95] text-white px-6 py-2 rounded-lg hover:opacity-90 transition-opacity duration-300 w-full text-center max-w-xs">
+                  <Link to="/auth" onClick={toggleMenu} className="text-sm sm:text-base font-medium text-[#A6A6A6] hover:text-black transition-colors duration-300 border border-gray-300 px-4 sm:px-6 py-2 rounded-lg w-full text-center max-w-xs">Login</Link>
+                  <Link to="/auth?mode=signup" onClick={toggleMenu} className="text-sm sm:text-base font-medium bg-[#54BD95] text-white px-4 sm:px-6 py-2 rounded-lg hover:opacity-90 transition-opacity duration-300 w-full text-center max-w-xs">
                     Sign Up
                   </Link>
                 </>
@@ -194,7 +192,7 @@ const Header = () => {
         </div>
       )}
     </header>
-  )
-}
+  );
+};
 
-export default Header 
+export default Header
